@@ -37,7 +37,6 @@ exports.aceEditEvent = (hook, call) => {
     const attributeManager = call.documentAttributeManager;
     const rep = call.rep;
     const activeAttributes = {};
-    // $("#align-selection").val(-2); // TODO commented this out
 
     const firstLine = rep.selStart[0];
     const lastLine = Math.max(firstLine, rep.selEnd[0] - ((rep.selEnd[1] === 0) ? 1 : 0));
@@ -56,9 +55,16 @@ exports.aceEditEvent = (hook, call) => {
 
     $.each(activeAttributes, (k, attr) => {
       if (attr.count === totalNumberOfLines) {
-        // show as active class
-        // const ind = tags.indexOf(k);
-        // $("#align-selection").val(ind); // TODO commnented this out
+        const currentAlign = k || "left";
+        const currentAlignIndex = tags.indexOf(currentAlign);
+        for (let i = 0; i < tags.length; i++) {
+          const menuItem = document.querySelector(`[data-align="${i}"]`);
+          if (currentAlignIndex === i) {
+            menuItem.classList.add("selected");
+          } else {
+            menuItem.classList.remove("selected");
+          }
+        }
       }
     });
 
