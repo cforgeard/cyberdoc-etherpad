@@ -1,5 +1,7 @@
 var $, jQuery;
 var $ = require('ep_etherpad-lite/static/js/rjquery').$;
+const _ = require('ep_etherpad-lite/static/js/underscore');
+
 var fonts = ['fontarial', 'fontavant-garde', 'fontbookman', 'fontcalibri', 'fontcourier', 'fontgaramond', 'fonthelvetica', 'fontmonospace', 'fontpalatino', 'fonttimes-new-roman'];
 
 /** ***
@@ -40,28 +42,21 @@ exports.aceEditEvent = function (hook, call, cb) {
   if (cs.type == 'setBaseText' || cs.type == 'setup') return false;
   // It looks like we should check to see if this section has this attribute
   setTimeout(() => { // avoid race condition..
-    $('.family-selection').val('dummy'); // reset value to the dummy value
+    const attributeManager = call.documentAttributeManager;
+    const rep = call.rep;
+    const activeAttributes = attributeManager.getAttributesOnPosition(rep.selStart[0], rep.selStart[1]);
 
-    // Attribtes are never available on the first X caret position so we need to ignore that
-    if (call.rep.selStart[1] === 0) {
-      // Attributes are never on the first line
-      return;
-    }
-    // The line has an attribute set, this means it wont get hte correct X caret position
-    if (call.rep.selStart[1] === 1) {
-      if (call.rep.alltext[0] === '*') {
-        // Attributes are never on the "first" character of lines with attributes
-        return;
+    let fontString = "Default";
+
+    for (const attribute of activeAttributes) {
+      if (fonts.indexOf(attribute[0]) !== -1) {
+        const font = attribute[0].substring(4);
+        fontString = capitaliseFirstLetter(font);
       }
     }
-    // the caret is in a new position.. Let's do some funky shit
-    $('.subscript > a').removeClass('activeButton');
-    $.each(fonts, (k, v) => {
-      if (call.editorInfo.ace_getAttributeOnSelection(v)) {
-        // show the button as being depressed.. Not sad, but active..
-        $('.family-selection').val(v);
-      }
-    });
+
+    document.querySelector(".family-selection .current").textContent = fontString;
+    cb();
   }, 250);
 };
 
