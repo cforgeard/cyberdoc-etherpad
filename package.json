@@ -4,7 +4,8 @@
     "ep_etherpad-lite": "file:src",
     "ep_font_color": "file:plugins-available/ep_font_color",
     "ep_font_family": "file:plugins-available/ep_font_family",
-    "ep_font_size": "file:plugins-available/ep_font_size"
+    "ep_font_size": "file:plugins-available/ep_font_size",
+    "ep_subscript_and_superscript": "file:plugins-available/ep_subscript_and_superscript"
   },
   "devDependencies": {
     "eslint": "^7.15.0",
