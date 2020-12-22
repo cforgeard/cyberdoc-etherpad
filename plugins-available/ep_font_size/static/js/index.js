@@ -66,3 +66,32 @@ exports.postToolbarInit = (hookName, context) => {
     $('#font-size').toggle();
   });
 };
+
+// To do show what font family is active on current selection
+exports.aceEditEvent = function (hook, call, cb) {
+  const cs = call.callstack;
+
+  if (!(cs.type == 'handleClick') && !(cs.type == 'handleKeyEvent') && !(cs.docTextChanged)) {
+    return false;
+  }
+
+  // If it's an initial setup event then do nothing..
+  if (cs.type == 'setBaseText' || cs.type == 'setup') return false;
+  // It looks like we should check to see if this section has this attribute
+  setTimeout(() => { // avoid race condition..
+    const attributeManager = call.documentAttributeManager;
+    const rep = call.rep;
+    const activeAttributes = attributeManager.getAttributesOnPosition(rep.selStart[0], rep.selStart[1]);
+
+    let fontSizeString = "15";
+
+    for (const attribute of activeAttributes) {
+      if (attribute[0] === "font-size") {
+        fontSizeString = attribute[1];
+      }
+    }
+
+    document.querySelector(".size-selection .current").textContent = fontSizeString;
+    return cb();
+  }, 250);
+};
