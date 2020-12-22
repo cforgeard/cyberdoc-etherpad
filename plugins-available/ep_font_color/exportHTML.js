@@ -12,12 +12,8 @@ const findAllColorUsedOn = (pad) => {
 exports.exportHtmlAdditionalTagsWithData = async (hookName, pad) => findAllColorUsedOn(pad).
     map((name) => ['color', name]);
 
-// Include CSS for HTML export
-exports.stylesForExport = async (hookName, padId) => eejs
-    .require('ep_font_color/static/css/color.css');
-
 exports.getLineHTMLForExport = async (hookName, context) => {
   // Replace data-color="foo" with class="color:x".
   context.lineContent =
-      context.lineContent.replace(/data-color=["|']([0-9a-zA-Z]+)["|']/gi, 'class="color:$1"');
+      context.lineContent.replace(/data-color=["|']([0-9a-zA-Z]+)["|']/gi, 'style="color:$1"');
 };
