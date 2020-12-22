@@ -9,7 +9,7 @@ var fonts = ['fontarial', 'fontavant-garde', 'fontbookman', 'fontcalibri', 'font
 ******/
 
 // Bind the event handler to the toolbar buttons
-exports.postAceInit = function (hook, context) {
+exports.postAceInit = function (hook, context, cb) {
   const fontFamily = $('select.family-selection');
   $.each(fonts, (k, font) => {
     font = font.substring(4);
@@ -28,6 +28,8 @@ exports.postAceInit = function (hook, context) {
       ace.ace_setAttributeOnSelection(value, true);
     }, 'insertfontFamily', true);
   });
+
+  return cb();
 };
 
 // To do show what font family is active on current selection
@@ -56,7 +58,7 @@ exports.aceEditEvent = function (hook, call, cb) {
     }
 
     document.querySelector(".family-selection .current").textContent = fontString;
-    cb();
+    return cb();
   }, 250);
 };
 
@@ -70,6 +72,7 @@ exports.aceAttribsToClasses = function (hook, context) {
   if (fonts.indexOf(context.key) !== -1) {
     return [context.key];
   }
+  return []
 };
 
 // Block elements

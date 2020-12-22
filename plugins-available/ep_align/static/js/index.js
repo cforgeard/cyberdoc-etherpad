@@ -8,7 +8,7 @@ const tags = ['left', 'center', 'justify', 'right'];
 exports.aceRegisterBlockElements = () => tags;
 
 // Bind the event handler to the toolbar buttons
-exports.postAceInit = (hookName, context) => {
+exports.postAceInit = (hookName, context, cb) => {
   $('body').on('click', '.ep_align', function () {
     const value = $(this).data('align');
     const intValue = parseInt(value, 10);
@@ -19,11 +19,11 @@ exports.postAceInit = (hookName, context) => {
     }
   });
 
-  return;
+  return cb();
 };
 
 // On caret position change show the current align
-exports.aceEditEvent = (hook, call) => {
+exports.aceEditEvent = (hook, call, cb) => {
   // If it's not a click or a key event and the text hasn't changed then do nothing
   const cs = call.callstack;
   if (!(cs.type === 'handleClick') && !(cs.type === 'handleKeyEvent') && !(cs.docTextChanged)) {
@@ -33,7 +33,7 @@ exports.aceEditEvent = (hook, call) => {
   if (cs.type === 'setBaseText' || cs.type === 'setup') return false;
 
   // It looks like we should check to see if this section has this attribute
-  return setTimeout(() => { // avoid race condition..
+  setTimeout(() => { // avoid race condition..
     const attributeManager = call.documentAttributeManager;
     const rep = call.rep;
     const activeAttributes = {};
@@ -68,7 +68,7 @@ exports.aceEditEvent = (hook, call) => {
       }
     });
 
-    return;
+    return cb();
   }, 250);
 };
 
@@ -77,6 +77,7 @@ exports.aceAttribsToClasses = (hook, context) => {
   if (context.key === 'align') {
     return [`align:${context.value}`];
   }
+  return []
 };
 
 // Here we convert the class align:left into a tag
@@ -101,7 +102,7 @@ exports.aceDomLineProcessLineAttributes = (name, context) => {
 
 
 // Once ace is initialized, we set ace_doInsertAlign and bind it to the context
-exports.aceInitialized = (hook, context) => {
+exports.aceInitialized = (hook, context, cb) => {
   // Passing a level >= 0 will set a alignment on the selected lines, level < 0
   // will remove it
   function doInsertAlign(level) {
@@ -124,7 +125,7 @@ exports.aceInitialized = (hook, context) => {
 
   const editorInfo = context.editorInfo;
   editorInfo.ace_doInsertAlign = _(doInsertAlign).bind(context);
-  return;
+  return cb();
 };
 
 const align = (context, alignment) => {
