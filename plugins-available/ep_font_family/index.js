@@ -48,6 +48,7 @@ exports.getLineHTMLForExport = function (hook, context, cb) {
     }
   });
   context.lineContent = lineContent;
+  cb();
 };
 
 String.prototype.replaceAll = function (str1, str2, ignore) {
