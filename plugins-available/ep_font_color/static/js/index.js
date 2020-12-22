@@ -103,10 +103,44 @@ const aceInitialized = (hook, context) => {
   editorInfo.ace_doInsertColors = _(doInsertColors).bind(context);
 };
 
+// To do show what font color is active on current selection
+const aceEditEvent = function (hook, call, cb) {
+  const cs = call.callstack;
+
+  if (!(cs.type == 'handleClick') && !(cs.type == 'handleKeyEvent') && !(cs.docTextChanged)) {
+    return false;
+  }
+
+  // If it's an initial setup event then do nothing..
+  if (cs.type == 'setBaseText' || cs.type == 'setup') return false;
+  // It looks like we should check to see if this section has this attribute
+  setTimeout(() => { // avoid race condition..
+    const attributeManager = call.documentAttributeManager;
+    const rep = call.rep;
+    const activeAttributes = attributeManager.getAttributesOnPosition(rep.selStart[0], rep.selStart[1]);
+
+    let colorString = "Black";
+
+    for (const attribute of activeAttributes) {
+      if (attribute[0] === "color") {
+        colorString = capitaliseFirstLetter(attribute[1]);
+      }
+    }
+
+    document.querySelector(".color-selection .current").textContent = colorString;
+    return cb();
+  }, 250);
+};
+
 const aceEditorCSS = () => cssFiles;
+
+function capitaliseFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 // Export all hooks
 exports.aceInitialized = aceInitialized;
 exports.postAceInit = postAceInit;
 exports.aceAttribsToClasses = aceAttribsToClasses;
 exports.aceEditorCSS = aceEditorCSS;
+exports.aceEditEvent = aceEditEvent;
