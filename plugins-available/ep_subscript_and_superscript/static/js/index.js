@@ -8,6 +8,7 @@ exports.postAceInit = (hook, context) => {
         ace.ace_setAttributeOnSelection('sub', false);
       } else {
         ace.ace_setAttributeOnSelection('sub', true);
+        ace.ace_setAttributeOnSelection('sup', false);
       }
     }, 'insertsubscript', true);
   });
@@ -17,6 +18,7 @@ exports.postAceInit = (hook, context) => {
         ace.ace_setAttributeOnSelection('sup', false);
       } else {
         ace.ace_setAttributeOnSelection('sup', true);
+        ace.ace_setAttributeOnSelection('sub', false);
       }
     }, 'insertsuperscript', true);
   });
@@ -33,15 +35,15 @@ exports.aceEditEvent = (hook, call, info, rep, attr) => {
     // the caret is in a new position..  Let's do some funky shit
     if (call.editorInfo.ace_getAttributeOnSelection('sub')) {
       // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
-      $('.subscript > a').addClass('activeButton');
+      $('.subscript > a').addClass('selected');
     } else {
-      $('.subscript > a').removeClass('activeButton');
+      $('.subscript > a').removeClass('selected');
     }
     if (call.editorInfo.ace_getAttributeOnSelection('sup')) {
       // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
-      $('.superscript > a').addClass('activeButton');
+      $('.superscript > a').addClass('selected');
     } else {
-      $('.superscript > a').removeClass('activeButton');
+      $('.superscript > a').removeClass('selected');
     }
   }, 250);
 };
