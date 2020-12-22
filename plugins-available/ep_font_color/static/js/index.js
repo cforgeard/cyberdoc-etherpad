@@ -119,15 +119,19 @@ const aceEditEvent = function (hook, call, cb) {
     const rep = call.rep;
     const activeAttributes = attributeManager.getAttributesOnPosition(rep.selStart[0], rep.selStart[1]);
 
-    let colorString = "Black";
+    let rawColor = "black";
 
     for (const attribute of activeAttributes) {
       if (attribute[0] === "color") {
-        colorString = capitaliseFirstLetter(attribute[1]);
+        rawColor = attribute[1];
       }
     }
 
-    document.querySelector(".color-selection .current").textContent = colorString;
+    //value
+    const currentSpan = document.querySelector(".color-selection .current");
+
+    currentSpan.innerText = capitaliseFirstLetter(rawColor);
+    currentSpan.dataset.value = colors.indexOf(rawColor);
     return cb();
   }, 250);
 };
