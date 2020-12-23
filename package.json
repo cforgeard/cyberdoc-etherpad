@@ -8,7 +8,8 @@
     "ep_headings2": "file:plugins-available/ep_headings2",
     "ep_print": "file:plugins-available/ep_print",
     "ep_spellcheck": "file:plugins-available/ep_spellcheck",
-    "ep_subscript_and_superscript": "file:plugins-available/ep_subscript_and_superscript"
+    "ep_subscript_and_superscript": "file:plugins-available/ep_subscript_and_superscript",
+    "ep_table_of_contents": "file:plugins-available/ep_table_of_contents"
   },
   "devDependencies": {
     "eslint": "^7.15.0",
