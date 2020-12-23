@@ -8,9 +8,7 @@
         "eejsBlock_editbarMenuLeft": "ep_insert_media/hooks:eejsBlock_editbarMenuLeft",
         "eejsBlock_scripts": "ep_insert_media/hooks:eejsBlock_scripts",
         "eejsBlock_styles": "ep_insert_media/hooks:eejsBlock_styles",
-        "eejsBlock_body": "ep_insert_media/hooks:eejsBlock_body",
-        "expressConfigure": "ep_insert_media/hooks:expressConfigure"
-
+        "eejsBlock_body": "ep_insert_media/hooks:eejsBlock_body"
       },
       "client_hooks": {
         "aceInitInnerdocbodyHead": "ep_insert_media/static/js/hooks:aceInitInnerdocbodyHead",

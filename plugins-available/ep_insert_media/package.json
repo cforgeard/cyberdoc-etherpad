@@ -4,16 +4,7 @@
   "version": "0.0.1",
   "author": "Samir Sayyad",
   "contributors": [],
-  "dependencies": {
-    "busboy": "^0.3.1",
-    "mime-db": "^1.44.0",
-    "mime-types": "^2.1.27",
-    "minio": "^7.0.16",
-    "path": "^0.12.7",
-    "stream_upload": "^0.0.5",
-    "url": "^0.11.0",
-    "uuid": "^8.3.0"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/samirsayyad/ep_insert_media.git"
