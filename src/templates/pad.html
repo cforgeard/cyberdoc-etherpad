@@ -137,15 +137,15 @@
               <input type="checkbox" id="options-linenoscheck" checked>
               <label for="options-linenoscheck" data-l10n-id="pad.settings.linenocheck"></label>
           </p>
-          <p>
+          <!--<p>
               <input type="checkbox" id="options-rtlcheck">
               <label for="options-rtlcheck" data-l10n-id="pad.settings.rtlcheck"></label>
-          </p>
+          </p>-->
           <% e.end_block(); %>
 
           <div class="dropdowns-container">
             <% e.begin_block("mySettings.dropdowns"); %>
-            <p class="dropdown-line">
+            <!--<p class="dropdown-line">
               <label for="viewfontmenu" data-l10n-id="pad.settings.fontType">Font type:</label>
               <select id="viewfontmenu">
                 <option value="" data-l10n-id="pad.settings.fontType.normal">Normal</option>
@@ -154,16 +154,16 @@
                   <option value="<%=fonts[i]%>"><%=fonts[i]%></option>
                 <% } %>
               </select>
-            </p>
+            </p>-->
 
-            <p class="dropdown-line">
+            <!--<p class="dropdown-line">
               <label for="languagemenu" data-l10n-id="pad.settings.language">Language:</label>
               <select id="languagemenu">
                   <% for (lang in langs) { %>
                   <option value="<%=lang%>"><%=langs[lang].nativeName%></option>
                   <% } %>
               </select>
-            </p>
+            </p>-->
             <% e.end_block(); %>
           </div>
 

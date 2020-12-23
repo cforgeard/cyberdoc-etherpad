@@ -62,8 +62,8 @@
   "pad.noCookie": "Cookie could not be found. Please allow cookies in your browser!  Your session and settings will not be saved between visits.  This may be due to Etherpad being included in an iFrame in some Browsers.  Please ensure Etherpad is on the same subdomain/domain as the parent iFrame",
   "pad.permissionDenied": "You do not have permission to access this pad",
 
-  "pad.settings.padSettings": "Pad Settings",
-  "pad.settings.myView": "My View",
+  "pad.settings.padSettings": "Settings",
+  "pad.settings.myView": "",
   "pad.settings.stickychat": "Chat always on screen",
   "pad.settings.chatandusers": "Show Chat and Users",
   "pad.settings.colorcheck": "Authorship colors",
