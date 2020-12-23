@@ -1,0 +1,45 @@
+{
+  "name": "ep_spellcheck",
+  "version": "0.0.18",
+  "keywords": [
+    "spell",
+    "check",
+    "spelling",
+    "spellcheck"
+  ],
+  "description": "Add support to do 'Spell checking', with a toggle on/off option in Settings",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ether/ep_spellcheck.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-etherpad": "^1.0.10",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-promise": "^4.2.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "etherpad/plugin"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "peerDependencies": {
+    "ep_etherpad-lite": ">=1.8.6"
+  }
+}
