@@ -1,0 +1,68 @@
+<div id="embedMediaModal">
+    <% e.begin_block("embedMediaPopup"); %>
+    <div class="embeddedPopupContainer">
+        <div class="embeddedTopContainer">
+            <div class="embeddedTopContainer_header">Insert Media</div>
+            <div class="embeddedTopContainer_close" id="cancelEmbedMedia"><svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 1.41156L12.59 0.00146484L7 5.59183L1.41 0.00146484L0 1.41156L5.59 7.00192L0 12.5923L1.41 14.0024L7 8.41201L12.59 14.0024L14 12.5923L8.41 7.00192L14 1.41156Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="embeddedTopContainer_subheader">Picture, audio, video or stream</div>
+
+        </div>
+        <form method="post" action="" enctype="multipart/form-data" id="myform">
+            <div class="embeddedUrlContainer">
+                <span class="embeddedUrlContainer_header">URL</span>
+                <input type="text" class="embedMediaSrc embedMediaSrcButton" placeholder="http://..." id="embedMediaSrc">
+    
+                <label class="ep_insert_media_label" for="file">or upload File</label>
+                <input type="file" id="file" class="ep_insert_media_file" name="file" /> 
+            </div>
+ 
+            <div id="mediaSizeSelect">
+                <span class="embeddedUrlContainer_header">Size</span>
+
+                <div class="btnMediaSizeContainer">
+                    <div class="btnMediaSize on">Small</div>
+                    <div class="btnMediaSize">Medium</div>
+                    <div class="btnMediaSize">Large</div>
+                </div>
+
+                <input type="hidden" id="selectedSize" value="Small">
+
+            </div>
+            <div id="mediaSizeSelect">
+                <span class="embeddedUrlContainer_header">Alignment</span>
+                <div class="btnMediaSizeContainer">
+                    <div data-value="Left" class="btnAlignDirection on">
+                        <svg class="alignIcon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.54004 1.2793H14.4463C14.7881 1.2793 15.0615 1.0127 15.0615 0.670898C15.0615 0.335938 14.7881 0.0625 14.4463 0.0625H1.54004C1.19824 0.0625 0.931641 0.335938 0.931641 0.670898C0.931641 1.0127 1.19824 1.2793 1.54004 1.2793ZM1.54004 4.86133H9.20312C9.54492 4.86133 9.81836 4.59473 9.81836 4.25293C9.81836 3.91113 9.54492 3.64453 9.20312 3.64453H1.54004C1.19824 3.64453 0.931641 3.91113 0.931641 4.25293C0.931641 4.59473 1.19824 4.86133 1.54004 4.86133ZM1.54004 8.44336H14.4463C14.7881 8.44336 15.0615 8.17676 15.0615 7.83496C15.0615 7.49316 14.7881 7.22656 14.4463 7.22656H1.54004C1.19824 7.22656 0.931641 7.49316 0.931641 7.83496C0.931641 8.17676 1.19824 8.44336 1.54004 8.44336ZM1.54004 12.0254H9.20312C9.54492 12.0254 9.81836 11.752 9.81836 11.417C9.81836 11.0752 9.54492 10.8086 9.20312 10.8086H1.54004C1.19824 10.8086 0.931641 11.0752 0.931641 11.417C0.931641 11.752 1.19824 12.0254 1.54004 12.0254Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div data-value="Center" class="btnAlignDirection">
+                        <svg class="alignIcon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.54004 1.2793H14.4463C14.7881 1.2793 15.0615 1.0127 15.0615 0.670898C15.0615 0.335938 14.7881 0.0625 14.4463 0.0625H1.54004C1.19824 0.0625 0.931641 0.335938 0.931641 0.670898C0.931641 1.0127 1.19824 1.2793 1.54004 1.2793ZM4.1582 4.86133H11.8213C12.1631 4.86133 12.4365 4.59473 12.4365 4.25293C12.4365 3.91113 12.1631 3.64453 11.8213 3.64453H4.1582C3.82324 3.64453 3.5498 3.91113 3.5498 4.25293C3.5498 4.59473 3.82324 4.86133 4.1582 4.86133ZM1.54004 8.44336H14.4463C14.7881 8.44336 15.0615 8.17676 15.0615 7.83496C15.0615 7.49316 14.7881 7.22656 14.4463 7.22656H1.54004C1.19824 7.22656 0.931641 7.49316 0.931641 7.83496C0.931641 8.17676 1.19824 8.44336 1.54004 8.44336ZM4.1582 12.0254H11.8213C12.1631 12.0254 12.4365 11.752 12.4365 11.417C12.4365 11.0752 12.1631 10.8086 11.8213 10.8086H4.1582C3.82324 10.8086 3.5498 11.0752 3.5498 11.417C3.5498 11.752 3.82324 12.0254 4.1582 12.0254Z" fill="#474747"/>
+                        </svg>
+                    </div>
+                    <div data-value="Right" class="btnAlignDirection">
+                        <svg class="alignIcon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.54004 1.2793H14.4463C14.7881 1.2793 15.0615 1.0127 15.0615 0.670898C15.0615 0.335938 14.7881 0.0625 14.4463 0.0625H1.54004C1.19824 0.0625 0.931641 0.335938 0.931641 0.670898C0.931641 1.0127 1.19824 1.2793 1.54004 1.2793ZM6.7832 4.86133H14.4463C14.7881 4.86133 15.0615 4.59473 15.0615 4.25293C15.0615 3.91113 14.7881 3.64453 14.4463 3.64453H6.7832C6.44141 3.64453 6.1748 3.91113 6.1748 4.25293C6.1748 4.59473 6.44141 4.86133 6.7832 4.86133ZM1.54004 8.44336H14.4463C14.7881 8.44336 15.0615 8.17676 15.0615 7.83496C15.0615 7.49316 14.7881 7.22656 14.4463 7.22656H1.54004C1.19824 7.22656 0.931641 7.49316 0.931641 7.83496C0.931641 8.17676 1.19824 8.44336 1.54004 8.44336ZM6.7832 12.0254H14.4463C14.7881 12.0254 15.0615 11.752 15.0615 11.417C15.0615 11.0752 14.7881 10.8086 14.4463 10.8086H6.7832C6.44141 10.8086 6.1748 11.0752 6.1748 11.417C6.1748 11.752 6.44141 12.0254 6.7832 12.0254Z" fill="#474747"/>
+                        </svg>
+                    </div>
+                </div>
+                <input type="hidden" id="selectedAlign" value="Left">
+
+            </div>
+
+    
+        </form>
+
+        <div>
+            <!-- <input type="button" class="button" value="Upload" id="but_upload"> -->
+            <input type="button" class="embedMediaButtonInsert" id="doEmbedMedia" value="Insert">
+        </div>
+    </div>
+ 
+   
+    <% e.end_block(); %>
+</div>

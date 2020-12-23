@@ -1,0 +1,23 @@
+{
+  "parts": [
+    {
+      "name": "insert_media",
+      "pre": ["ep_etherpad-lite/webaccess", "ep_page_view/page_view"],
+      "post": ["ep_etherpad-lite/static"],
+      "hooks": {
+        "eejsBlock_editbarMenuLeft": "ep_insert_media/hooks:eejsBlock_editbarMenuLeft",
+        "eejsBlock_scripts": "ep_insert_media/hooks:eejsBlock_scripts",
+        "eejsBlock_styles": "ep_insert_media/hooks:eejsBlock_styles",
+        "eejsBlock_body": "ep_insert_media/hooks:eejsBlock_body",
+        "expressConfigure": "ep_insert_media/hooks:expressConfigure"
+
+      },
+      "client_hooks": {
+        "aceInitInnerdocbodyHead": "ep_insert_media/static/js/hooks:aceInitInnerdocbodyHead",
+        "aceAttribsToClasses": "ep_insert_media/static/js/hooks:aceAttribsToClasses",
+        "aceCreateDomLine": "ep_insert_media/static/js/hooks:aceCreateDomLine",
+        "aceInitialized" : "ep_insert_media/static/js/hooks:aceInitialized"
+      }
+    }
+  ]
+}
