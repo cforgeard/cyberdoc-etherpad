@@ -9,3 +9,8 @@ exports.eejsBlock_editorContainerBox = function (hook_name, args, cb) {
   args.content = args.content + eejs.require("ep_embedded_hyperlinks2/templates/popup.ejs", {}, module);
   return cb();
 }
+
+exports.eejsBlock_dd_insert = (hookName, args, cb) => {
+  args.content += eejs.require('ep_embedded_hyperlinks2/templates/fileMenu.ejs');
+  return cb();
+};

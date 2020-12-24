@@ -1,148 +1,148 @@
-<ul class="dropdown-menu">
-    <% e.begin_block("dd_dropdownMenu"); %>
-    <li>
-        <a href="#">File</a>
-        <ul>
-            <li>
-               <% e.begin_block("dd_file"); %>
-               <li><a href target="_blank" id="newPad" data-l10n-id="index.newPad">New</a></li>
-               <li><a href="#" data-key="save" id="revisionlink" data-type="button" data-l10n-id="pad.toolbar.savedRevision.title"><u>S</u>ave</a></li>
-               <li><a href="#" id="importexportlink" data-key="import_export" class="acl-write" data-type="button" data-l10n-id="pad.impexp.importbutton">Import</a></li>
-               <li id="file_menu_exports"><a href="#" data-key="export" data-type="button" data-l10n-id="pad.importExport.export">Export</a>
-                 <ul class="submenu">
-                 </ul>
-               </li>
-               <hr></hr>
-               <li onclick="document.location = document.location.pathname+ '/timeslider'"><a data-l10n-id="pad.toolbar.timeslider.title" href="#" id="timesliderlink">Timeslider</a></li>
-               <hr></hr>
-               <li><a href="#" id="filemenutoolbarsettings" data-key="settings" data-type="button" data-l10n-id="pad.settings.padSettings">Pad Settings</a></li>
-               <li><a href="#" data-key="print" onClick="printPad()" data-type="button" data-l10n-id="">Print</a></li>
-               <li><a href="#" id="filemenutoolbarembed" data-key="embed" id="embedlink" data-type="button" data-l10n-id="pad.toolbar.embed.title">Share & Embed</a></li>
-               <% e.end_block(); %>
-            </li>
-        </ul>
-    </li>
-    <li class="acl-write">
-        <a href="#" data-l10n-id="">Edit</a>
-        <ul>
-            <li>
-               <% e.begin_block("dd_edit"); %>
-               <li><a href="#" data-key="undo" data-l10n-id="pad.toolbar.undo.title">Undo</a></li>
-               <li><a href="#" data-key="redo" data-l10n-id="pad.toolbar.redo.title">Redo</a></li>
-               <% e.end_block(); %>
-            </li>
-        </ul>
-     <li>
-     <li class="acl-write">
-        <a href="#">Format</a>
-        <ul>
-            <li>
-               <% e.begin_block("dd_format"); %>
-               <li id="bold"><a href="#" data-key="bold" data-type="button" onClick="$('.buttonicon-bold').click();"><u>B</u>old</a></li>
-               <li id="italic"><a href="#" data-key="italic" data-type="button" onClick="$('.buttonicon-italic').click();"><u>I</u>talic</a></li>
-               <li id="underline"><a href="#" data-key="underline" data-type="button" onClick="$('.buttonicon-underline').click();"><u>U</u>nderline</a></li>
-               <li id="strikethrough"><a href="#" data-key="strikethrough" data-type="button" onClick="$('.buttonicon-strikethrough').click();" data-l10n-id="pad.toolbar.strikethrough.title">Strikethrough</a></li>
-               <hr></hr>
-               <li><a href="#" data-l10n-id="pad.toolbar.ol.title" data-key="insertorderedlist" data-type="button" onClick="$('.buttonicon-insertorderedlist').click();">Ordered List</a></li>
-               <li><a href="#" data-l10n-id="pad.toolbar.ul.title" data-key="insertunorderedlist" data-type="button" onClick="$('.buttonicon-insertunorderedlist').click();">Unordered list</a></li>
-               <li><a href="#" data-l10n-id="pad.toolbar.indent.title" data-key="indent" data-type="button" onClick="$('.buttonicon-indent').click();">Indent</a></li>
-               <li><a href="#" data-l10n-id="pad.toolbar.unindent.title" data-key="outdent" data-type="button" onClick="$('.buttonicon-outdent').click();">Outdent</a></li>
-               <hr></hr>
-               <li><a href="#" data-l10n-id="pad.toolbar.clearAuthorship.title" data-key="clearauthorship" data-type="button" onClick="$('.buttonicon-clearauthorship').click();">Clear Authorship Colors</a></li>
-               <% e.end_block(); %>
-
-            </li>
-        </ul>
-   </li>
-
-
-    <li class="acl-write">
-       <a href="#">Insert</a>
-       <ul>
-         <li>
-           <% e.begin_block("dd_insert"); %>
-           <% e.end_block(); %>
-          </li>
-       </ul>
-    </li>
-
-
-   <li>
-        <a href="#">View</a>
-        <ul>
-            <li>
-               <% e.begin_block("dd_view"); %>
-               <li><a href="#" data-l10n-id="pad.settings.colorcheck" onClick="$('#options-colorscheck').click();">Authorship colors</a></li>
-               <li><a href="#" data-l10n-id="pad.settings.linenocheck" onClick="$('#options-linenoscheck').click();">Line Numbers</a></li>
-               <li><a href="#" data-l10n-id="pad.settings.stickychat" onClick="chat.stickToScreen();">Chat Always Visible</a></li>
-               <li><a href="#" onClick="$('#timesliderlink').click();" data-l10n-id="pad.toolbar.timeslider.title">Timeslider</a></li>
-               <li><a href="#" data-l10n-id="pad.settings.rtlcheck" onClick="$('#options-rtlcheck').click();">Text Right to Left</a></li>
-               <% e.end_block(); %>
-            </li>
-        </ul>
-
-    </li>
-   <li>
-        <a href="#" class='dropdown-help'>Help</a>
-        <ul>
-            <li>
-               <% e.begin_block("dd_help"); %>
-               <li><a href="http://mclear.co.uk" target="_blank">File Menu Toolbar plugin by John McLear</a></li>
-               <% e.end_block(); %>
-            </li>
-        </ul>
-
-    </li>
-    <% e.end_block(); %>
-</ul>
-
-<style type="text/css">
-#editorcontainerbox{
-  top:23px;
-}
-.stickyChat{
-  top:61px;
-}
-.dropdown-menu-sub-indicator > ul {
-  border:1px solid rgb(204, 204, 204);
-  border-radius:0px 0px 6px 6px;
-  box-shadow: 0px 2px 4px rgb(221, 221, 221);
-  background:linear-gradient(rgb(247, 247, 247), rgb(238, 238, 238)) repeat scroll 0% 0% transparent;
-  padding:10px;
-}
-.submenu{
-  margin:0px 0px 10px 0px;
-  padding: 0px 10px 0px 5px !important;
-  border-radius:0px 6px 6px 0px !important;
-}
-.dropdown-menu-sub-indicator > ul > hr{
-  margin:10px 0px 10px 0px;
-}
-@media all and (max-width: 400px){
-  .dropdown-menu{
-    display:none;
-  } 
-  #editorcontainerbox{
-    top:0;
+<style>
+  .menu-toolbar-icon:before {
+    margin-right: 16px;
   }
-}
 
-#settings, #importexport, #embed, #connectivity, #users {
-  top:59px;
-}
+  .has-submenu:after {
+    content: "▶";
+    font-size: 9px;
+    padding: 5px 0 0 10px;
+    float: right;
+    opacity: .8;
+  }
 </style>
 
-<script src="../static/js/jquery.js"></script>
+<ul class="dropdown-menu">
+  <% e.begin_block("dd_dropdownMenu"); %>
+    <li>
+      <a href="#">File</a>
+      <ul>
+        <li>
+          <% e.begin_block("dd_file"); %>
+        <li onclick="document.location = document.location.pathname+ '/timeslider'"><a
+            class="menu-toolbar-icon buttonicon-history" data-l10n-id="pad.toolbar.timeslider.title" href="#"
+            id="timesliderlink">Timeslider</a></li>
+        <hr />
+        <li><a class="menu-toolbar-icon buttonicon-settings" href="#" id="filemenutoolbarsettings" data-key="settings"
+            data-type="button" data-l10n-id="pad.settings.padSettings">Settings</a></li>
+        <% e.end_block(); %>
+    </li>
+</ul>
+</li>
+<li class="acl-write">
+  <a href="#" data-l10n-id="">Edit</a>
+  <ul>
+    <li>
+      <% e.begin_block("dd_edit"); %>
+    <li><a class="menu-toolbar-icon buttonicon-undo" href="#" data-key="undo" data-l10n-id="pad.toolbar.undo.title"
+        onClick="$('.buttonicon.buttonicon-undo').click();">Undo</a></li>
+    <li><a class="menu-toolbar-icon buttonicon-redo" href="#" data-key="redo" data-l10n-id="pad.toolbar.redo.title"
+        onClick="$('.buttonicon.buttonicon-redo').click();">Redo</a></li>
+    <% e.end_block(); %>
+</li>
+</ul>
+<li>
+<li class="acl-write">
+  <a href="#">Format</a>
+  <ul>
+    <li>
+      <% e.begin_block("dd_format"); %>
+    <li><a class="has-submenu" href="#" data-key="text" data-type="button">Text style</a>
+      <ul class="submenu">
+        <li><a class="menu-toolbar-icon buttonicon-bold" href="#" data-key="bold" data-type="button"
+            onClick="$('.buttonicon.buttonicon-bold').click();"><u>B</u>old</a></li>
+        <li><a class="menu-toolbar-icon buttonicon-italic" href="#" data-key="italic" data-type="button"
+            onClick="$('.buttonicon.buttonicon-italic').click();"><u>I</u>talic</a></li>
+        <li><a class="menu-toolbar-icon buttonicon-underline" href="#" data-key="underline" data-type="button"
+            onClick="$('.buttonicon.buttonicon-underline').click();"><u>U</u>nderline</a></li>
+        <li><a class="menu-toolbar-icon buttonicon-strikethrough" href="#" data-key="strikethrough" data-type="button"
+            onClick="$('.buttonicon.buttonicon-strikethrough').click();"
+            data-l10n-id="pad.toolbar.strikethrough.title">Strikethrough</a></li>
+      </ul>
+    </li>
+    <hr />
+    <li><a class="menu-toolbar-icon buttonicon-insertorderedlist" href="#" data-l10n-id="pad.toolbar.ol.title"
+        data-key="insertorderedlist" data-type="button"
+        onClick="$('.buttonicon.buttonicon-insertorderedlist').click();">Ordered List</a></li>
+    <li><a class="menu-toolbar-icon buttonicon-insertunorderedlist" href="#" data-l10n-id="pad.toolbar.ul.title"
+        data-key="insertunorderedlist" data-type="button"
+        onClick="$('.buttonicon.buttonicon-insertunorderedlist').click();">Unordered list</a></li>
+    <hr />
+    <li><a class="menu-toolbar-icon buttonicon-indent" href="#" data-l10n-id="pad.toolbar.indent.title"
+        data-key="indent" data-type="button" onClick="$('.buttonicon.buttonicon-indent').click();">Increase indent</a>
+    </li>
+    <li><a class="menu-toolbar-icon buttonicon-outdent" href="#" data-l10n-id="pad.toolbar.unindent.title"
+        data-key="outdent" data-type="button" onClick="$('.buttonicon.buttonicon-outdent').click();">Decrease indent</a>
+    </li>
+    <% e.end_block(); %>
 
-<script>
-function printPad(){
-  window.print();
+</li>
+</ul>
+</li>
 
-  // In chrome you have to fire the window.location.reload event to fire a print event.. More evidence Google = Microsoft
-  // http://stackoverflow.com/questions/18622626/chrome-window-print-print-dialogue-opens-only-after-page-reload-javascript
-  if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1){             
-    window.location.reload(); // Chrome is really broken here..
-  }  
 
-}
-</script>
+<li class="acl-write">
+  <a href="#">Insert</a>
+  <ul>
+    <li>
+      <% e.begin_block("dd_insert"); %>
+        <% e.end_block(); %>
+    </li>
+  </ul>
+</li>
+
+
+<li>
+  <a href="#">View</a>
+  <ul>
+    <li>
+      <% e.begin_block("dd_view"); %>
+        <% e.end_block(); %>
+    </li>
+  </ul>
+
+</li>
+<li>
+  <a href="#">Help</a>
+  <ul>
+    <li>
+      <% e.begin_block("dd_help"); %>
+        <% e.end_block(); %>
+    </li>
+  </ul>
+
+</li>
+<% e.end_block(); %>
+  </ul>
+
+  <style type="text/css">
+    .dropdown-menu-sub-indicator>ul {
+      border: 1px solid rgb(204, 204, 204);
+      border-radius: 0px 0px 6px 6px;
+      box-shadow: 0px 2px 4px rgb(221, 221, 221);
+      background: linear-gradient(rgb(247, 247, 247), rgb(238, 238, 238)) repeat scroll 0% 0% transparent;
+      padding: 10px;
+    }
+
+    .submenu {
+      margin: 0px 0px 10px 0px;
+      padding: 10px !important;
+      border-radius: 0px 6px 6px 0px !important;
+    }
+
+    .dropdown-menu-sub-indicator>ul>hr {
+      margin: 10px 0px 10px 0px;
+    }
+
+    @media all and (max-width: 400px) {
+      .dropdown-menu {
+        display: none;
+      }
+
+      #editorcontainerbox {
+        top: 0;
+      }
+    }
+  </style>
+
+  <script src="../static/js/jquery.js"></script>

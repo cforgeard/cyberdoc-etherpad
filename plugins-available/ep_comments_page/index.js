@@ -128,9 +128,9 @@ exports.socketio = (hookName, args, cb) => {
 };
 
 exports.eejsBlock_dd_insert = (hookName, args, cb) => {
-  args.content += eejs.require('ep_comments_page/templates/menuButtons.ejs');
+  args.content += eejs.require('ep_comments_page/templates/fileMenu.ejs');
   return cb();
-};
+}
 
 exports.eejsBlock_mySettings = (hookName, args, cb) => {
   args.content += eejs.require('ep_comments_page/templates/settings.ejs');

@@ -9,6 +9,7 @@
         "eejsBlock_scripts": "ep_insert_media/hooks:eejsBlock_scripts",
         "eejsBlock_styles": "ep_insert_media/hooks:eejsBlock_styles",
         "eejsBlock_body": "ep_insert_media/hooks:eejsBlock_body",
+        "eejsBlock_dd_insert": "ep_insert_media/hooks:eejsBlock_dd_insert",
         "exportHtmlAdditionalTagsWithData": "ep_insert_media/exportHTML",
         "getLineHTMLForExport": "ep_insert_media/exportHTML"
       },

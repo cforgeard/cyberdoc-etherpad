@@ -12,11 +12,6 @@ exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {
   return cb();
 };
 
-exports.eejsBlock_dd_format = (hookName, args, cb) => {
-  args.content += eejs.require('ep_font_size/templates/fileMenu.ejs');
-  return cb();
-};
-
 exports.eejsBlock_timesliderStyles = (hookName, args, cb) => {
   args.content += `<style>${eejs.require('ep_font_size/static/css/size.css')}</style>`;
   return cb();

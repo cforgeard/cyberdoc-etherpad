@@ -9,12 +9,6 @@ exports.eejsBlock_styles = (hookName, args, cb) => {
   return cb();
 };
 
-exports.eejsBlock_dd_view = (hookName, args, cb) => {
-  args.content +=
-  "<li><a href='#' onClick='$(\"#options-toc\").click();'>Table Of Contents</a></li>";
-  return cb();
-};
-
 exports.eejsBlock_editorContainerBox = (hookName, args, cb) => {
   args.content += eejs.require('./templates/toc.ejs', {}, module);
   return cb();

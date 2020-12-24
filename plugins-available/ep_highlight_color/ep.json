@@ -16,8 +16,7 @@
         "collectContentPre": "ep_highlight_color/static/js/shared",
         "collectContentPost": "ep_highlight_color/static/js/shared",
         "exportHtmlAdditionalTagsWithData": "ep_highlight_color/exportHTML",
-        "getLineHTMLForExport": "ep_highlight_color/exportHTML",
-        "eejsBlock_dd_format":"ep_highlight_color/index"
+        "getLineHTMLForExport": "ep_highlight_color/exportHTML"
       }
     }
   ]

@@ -17,6 +17,11 @@ exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {
   return cb();
 };
 
+exports.eejsBlock_dd_format = function (hook_name, args, cb) {
+  args.content += eejs.require('ep_align/templates/fileMenu.ejs');
+  return cb();
+};
+
 const _analyzeLine = (alineAttrs, apool) => {
   let alignment = null;
   if (alineAttrs) {

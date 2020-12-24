@@ -7,4 +7,5 @@ exports.eejsBlock_styles = function (hook_name, args, cb) {
 
 exports.eejsBlock_body = function (hook_name, args, cb) {
   args.content = eejs.require('ep_aa_file_menu_toolbar/templates/toolbar.ejs', {settings: false}) + args.content;
+  return cb();
 };

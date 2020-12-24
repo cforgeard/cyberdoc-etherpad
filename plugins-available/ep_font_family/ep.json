@@ -16,7 +16,6 @@
         "eejsBlock_editbarMenuLeft": "ep_font_family/index",
         "collectContentPre": "ep_font_family/static/js/shared",
         "collectContentPost": "ep_font_family/static/js/shared",
-        "eejsBlock_dd_format":"ep_font_family/index",
         "aceAttribClasses":"ep_font_family/index",
         "exportHtmlAdditionalTags" : "ep_font_family/index",
         "getLineHTMLForExport": "ep_font_family/index"

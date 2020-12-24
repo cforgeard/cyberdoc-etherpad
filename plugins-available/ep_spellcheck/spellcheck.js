@@ -14,8 +14,3 @@ exports.eejsBlock_mySettings = (hookName, args, cb) => {
   args.content += eejs.require(ejsPath, {checked: checkedState});
   return cb();
 };
-
-exports.eejsBlock_dd_view = (hookName, args, cb) => {
-  const li = "<li><a href='#' onClick='$(\"#options-spellcheck\").click();'>Spell Check</a></li>";
-  args.content += li;
-};

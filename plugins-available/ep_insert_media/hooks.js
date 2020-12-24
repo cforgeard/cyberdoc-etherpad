@@ -19,3 +19,8 @@ exports.eejsBlock_styles = function (hook_name, args, cb) {
   args.content = args.content + eejs.require("ep_insert_media/templates/styles.ejs", {}, module);
   return cb();
 }
+
+exports.eejsBlock_dd_insert = (hookName, args, cb) => {
+  args.content += eejs.require('ep_insert_media/templates/fileMenu.ejs');
+  return cb();
+}
