@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ep_aa_file_menu_toolbar": "file:plugins-available/ep_file_menu_toolbar",
     "ep_align": "file:plugins-available/ep_align",
     "ep_comments_page": "file:plugins-available/ep_comments_page",
     "ep_embedded_hyperlinks2": "file:plugins-available/ep_embedded_hyperlinks2",

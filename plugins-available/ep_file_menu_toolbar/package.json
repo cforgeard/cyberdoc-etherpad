@@ -1,0 +1,37 @@
+{
+  "name": "ep_aa_file_menu_toolbar",
+  "description": "File / Menu style toolbar",
+  "version": "0.2.01",
+  "author": "johnyma22 (John McLear) <john@mclear.co.uk>",
+  "dependencies": {},
+  "engines": {
+    "node": ">= 0.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnMcLear/ep_file_menu_toolbar.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-etherpad": "^1.0.8",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-promise": "^4.2.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "etherpad/plugin"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "peerDependencies": {
+    "ep_etherpad-lite": ">=1.8.6"
+  }
+}
