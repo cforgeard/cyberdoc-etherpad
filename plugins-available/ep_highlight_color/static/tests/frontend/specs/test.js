@@ -27,8 +27,8 @@ describe('Set Font Color and ensure its removed properly', function () {
     $firstTextElement.sendkeys('{selectall}');
 
     // sets first line to Font Color red
-    chrome$('.color-selection').val('1');
-    chrome$('.color-selection').change();
+    chrome$('.highlight-color-selection').val('1');
+    chrome$('.highlight-color-selection').change();
 
     let fElement = inner$('div').first();
     helper.waitFor(() => {
@@ -38,8 +38,8 @@ describe('Set Font Color and ensure its removed properly', function () {
       $firstTextElement = inner$('div').first();
       $firstTextElement.sendkeys('{selectall}');
       // sets first line to Font Color black
-      chrome$('.color-selection').val('0');
-      chrome$('.color-selection').change();
+      chrome$('.highlight-color-selection').val('0');
+      chrome$('.highlight-color-selection').change();
       helper.waitFor(() => {
         fElement = inner$('div').first();
         const elementHasClass = fElement.children().first().hasClass('color:black');

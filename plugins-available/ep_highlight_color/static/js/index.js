@@ -26,41 +26,41 @@ const colors = [
 
 // Bind the event handler to the toolbar buttons
 const postAceInit = function (hook, context) {
-  const hs = $('.color-selection');
+  const hs = $('.highlight-color-selection');
   hs.on('change', function () {
     const value = $(this).val();
     const intValue = parseInt(value, 10);
     if (!_.isNaN(intValue)) {
       context.ace.callWithAce((ace) => {
-        ace.ace_doInsertColors(intValue);
-      }, 'insertColor', true);
+        ace.ace_doInsertHighlightColors(intValue);
+      }, 'insertHighlightColor', true);
       hs.val('dummy');
     }
   });
-  $('.font_color').hover(() => {
-    $('.submenu > .color-selection').attr('size', 6);
+  $('.font_highlight_color').hover(() => {
+    $('.submenu > .highlight-color-selection').attr('size', 6);
   });
-  $('.font-color-icon').click(() => {
-    $('#font-color').toggle();
+  $('.font-highlight-color-icon').click(() => {
+    $('#font-highlight-color').toggle();
   });
 };
 
-// Our colors attribute will result in a color:red... _yellow class
+// Our colors attribute will result in a highlight-color:red... _yellow class
 const aceAttribsToClasses = (hook, context) => {
-  if (context.key.indexOf('color:') !== -1) {
-    const color = /(?:^| )color:([A-Za-z0-9]*)/.exec(context.key);
-    return [`color:${color[1]}`];
+  if (context.key.indexOf('highlight-color:') !== -1) {
+    const color = /(?:^| )highlight-color:([A-Za-z0-9]*)/.exec(context.key);
+    return [`highlight-color:${color[1]}`];
   }
-  if (context.key === 'color') {
-    return [`color:${context.value}`];
+  if (context.key === 'highlight-color') {
+    return [`highlight-color:${context.value}`];
   }
 };
 
 
-// Here we convert the class color:red into a tag
+// Here we convert the class highlight-color:red into a tag
 exports.aceCreateDomLine = (name, context) => {
   const cls = context.cls;
-  const colorsType = /(?:^| )color:([A-Za-z0-9]*)/.exec(cls);
+  const colorsType = /(?:^| )highlight-color:([A-Za-z0-9]*)/.exec(cls);
 
   let tagIndex;
   if (colorsType) tagIndex = _.indexOf(colors, colorsType[1]);
@@ -78,29 +78,29 @@ exports.aceCreateDomLine = (name, context) => {
 };
 
 
-// Find out which lines are selected and assign them the color attribute.
+// Find out which lines are selected and assign them the highlight-color attribute.
 // Passing a level >= 0 will set a colors on the selected lines, level < 0
 // will remove it
-const doInsertColors = function (level) {
+const doInsertHighlightColors = function (level) {
   const rep = this.rep;
   const documentAttributeManager = this.documentAttributeManager;
   if (!(rep.selStart && rep.selEnd) || (level >= 0 && colors[level] === undefined)) {
     return;
   }
 
-  let newColor = ['color', ''];
+  let newColor = ['highlight-color', ''];
   if (level >= 0) {
-    newColor = ['color', colors[level]];
+    newColor = ['highlight-color', colors[level]];
   }
 
   documentAttributeManager.setAttributesOnRange(rep.selStart, rep.selEnd, [newColor]);
 };
 
 
-// Once ace is initialized, we set ace_doInsertColors and bind it to the context
+// Once ace is initialized, we set ace_doInsertHighlightColors and bind it to the context
 const aceInitialized = (hook, context) => {
   const editorInfo = context.editorInfo;
-  editorInfo.ace_doInsertColors = _(doInsertColors).bind(context);
+  editorInfo.ace_doInsertHighlightColors = _(doInsertHighlightColors).bind(context);
 };
 
 // To do show what font color is active on current selection
@@ -119,16 +119,16 @@ const aceEditEvent = function (hook, call, cb) {
     const rep = call.rep;
     const activeAttributes = attributeManager.getAttributesOnPosition(rep.selStart[0], rep.selStart[1]);
 
-    let rawColor = "black";
+    let rawColor = "white";
 
     for (const attribute of activeAttributes) {
-      if (attribute[0] === "color") {
+      if (attribute[0] === "highlight-color") {
         rawColor = attribute[1];
       }
     }
 
     //value
-    const currentSpan = document.querySelector(".color-selection .current");
+    const currentSpan = document.querySelector(".highlight-color-selection .current");
 
     currentSpan.innerText = capitaliseFirstLetter(rawColor);
     currentSpan.dataset.value = colors.indexOf(rawColor);

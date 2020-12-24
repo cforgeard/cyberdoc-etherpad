@@ -6,6 +6,7 @@
     "ep_font_family": "file:plugins-available/ep_font_family",
     "ep_font_size": "file:plugins-available/ep_font_size",
     "ep_headings2": "file:plugins-available/ep_headings2",
+    "ep_highlight_color": "file:plugins-available/ep_highlight_color",
     "ep_insert_media": "file:plugins-available/ep_insert_media",
     "ep_print": "file:plugins-available/ep_print",
     "ep_spellcheck": "file:plugins-available/ep_spellcheck",

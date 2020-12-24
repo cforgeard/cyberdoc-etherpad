@@ -48,7 +48,7 @@ describe('Select color dropdown localization', function () {
       'ep_highlight_color.orange': 'orange',
     };
     const chrome$ = helper.padChrome$;
-    const $options = chrome$('#editbar').find('#font-color').find('option');
+    const $options = chrome$('#editbar').find('#font-highlight-color').find('option');
     $options.each(function (index) {
       const $key = $(this).attr('data-l10n-id');
       const $text = $(this).text();
