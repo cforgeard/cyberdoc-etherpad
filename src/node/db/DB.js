@@ -25,7 +25,14 @@ const log4js = require('log4js');
 const util = require('util');
 
 // set database settings
-const db = new ueberDB.database(settings.dbType, settings.dbSettings, null, log4js.getLogger('ueberDB'));
+let db;
+if (settings.dbType.includes("/")) {
+  const customDBModule = require(settings.dbType);
+  db = new ueberDB.database('dirty', settings.dbSettings, null, log4js.getLogger('ueberDB'));
+  db.db_module = customDBModule;
+} else {
+  db = new ueberDB.database(settings.dbType, settings.dbSettings, null, log4js.getLogger('ueberDB'));
+}
 
 /**
  * The UeberDB Object that provides the database functions

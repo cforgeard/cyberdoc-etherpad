@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "ep_align": "file:plugins-available/ep_align",
+    "ep_cyberdoc_integration": "file:plugins-available/ep_cyberdoc_integration",
     "ep_etherpad-lite": "file:src",
     "ep_font_color": "file:plugins-available/ep_font_color",
     "ep_font_family": "file:plugins-available/ep_font_family",

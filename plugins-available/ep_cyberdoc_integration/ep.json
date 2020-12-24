@@ -1,0 +1,14 @@
+{
+    "parts": [
+        {
+            "name": "cyberdoc_integration",
+            "hooks": {
+                "authenticate": "ep_cyberdoc_integration/auth",
+                "authorize": "ep_cyberdoc_integration/auth",
+                "authFailure": "ep_cyberdoc_integration/auth",
+                "onAccessCheck": "ep_cyberdoc_integration/auth"
+            },
+            "client_hooks": {}
+        }
+    ]
+}

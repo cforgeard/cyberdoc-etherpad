@@ -1,0 +1,15 @@
+{
+	"name": "ep_cyberdoc_integration",
+	"version": "0.0.1",
+	"private": true,
+	"description": "ep_cyberdoc_integration",
+	"author": "cyberdoc team",
+	"contributors": [],
+	"dependencies": {
+		"jsonwebtoken": "^8.5.1",
+		"mongodb": "^3.6.3"
+	},
+	"engines": {
+		"node": ">=10.13.0"
+	}
+}
