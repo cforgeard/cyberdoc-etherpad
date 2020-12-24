@@ -2,6 +2,7 @@
   "dependencies": {
     "ep_align": "file:plugins-available/ep_align",
     "ep_comments_page": "file:plugins-available/ep_comments_page",
+    "ep_embedded_hyperlinks2": "file:plugins-available/ep_embedded_hyperlinks2",
     "ep_etherpad-lite": "file:src",
     "ep_font_color": "file:plugins-available/ep_font_color",
     "ep_font_family": "file:plugins-available/ep_font_family",
