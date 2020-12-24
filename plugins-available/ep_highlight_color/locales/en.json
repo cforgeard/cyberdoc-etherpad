@@ -1,0 +1,9 @@
+{
+  "ep_highlight_color.color" : "Color",
+  "ep_highlight_color.black" : "black",
+  "ep_highlight_color.red" : "red",
+  "ep_highlight_color.green" : "green",
+  "ep_highlight_color.blue" : "blue",
+  "ep_highlight_color.yellow" : "yellow",
+  "ep_highlight_color.orange" : "orange"
+}

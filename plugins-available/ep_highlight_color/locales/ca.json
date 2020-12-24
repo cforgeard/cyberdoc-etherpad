@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mguix"
+		]
+	},
+	"ep_highlight_color.color": "Color",
+	"ep_highlight_color.black": "negre",
+	"ep_highlight_color.red": "vermell",
+	"ep_highlight_color.green": "verd",
+	"ep_highlight_color.blue": "blau",
+	"ep_highlight_color.yellow": "groc",
+	"ep_highlight_color.orange": "taronja"
+}

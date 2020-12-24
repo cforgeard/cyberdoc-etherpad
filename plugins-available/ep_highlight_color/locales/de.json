@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"ep_highlight_color.color": "Farbe",
+	"ep_highlight_color.black": "schwarz",
+	"ep_highlight_color.red": "rot",
+	"ep_highlight_color.green": "grün",
+	"ep_highlight_color.blue": "blau",
+	"ep_highlight_color.yellow": "gelb",
+	"ep_highlight_color.orange": "orange"
+}

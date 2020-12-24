@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"ep_highlight_color.color": "Szín",
+	"ep_highlight_color.black": "fekete",
+	"ep_highlight_color.red": "piros",
+	"ep_highlight_color.green": "zöld",
+	"ep_highlight_color.blue": "kék",
+	"ep_highlight_color.yellow": "sárga",
+	"ep_highlight_color.orange": "narancssárga"
+}

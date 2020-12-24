@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"沈澄心"
+		]
+	},
+	"ep_highlight_color.color": "颜色",
+	"ep_highlight_color.black": "黑色",
+	"ep_highlight_color.red": "红色",
+	"ep_highlight_color.green": "绿色",
+	"ep_highlight_color.yellow": "黄色",
+	"ep_highlight_color.orange": "橙色"
+}

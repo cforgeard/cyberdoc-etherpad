@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aranka",
+			"woeterman_94"
+		]
+	},
+	"ep_highlight_color.color": "Kleur",
+	"ep_highlight_color.black": "zwart",
+	"ep_highlight_color.red": "rood",
+	"ep_highlight_color.green": "groen",
+	"ep_highlight_color.blue": "blauw",
+	"ep_highlight_color.yellow": "geel",
+	"ep_highlight_color.orange": "oranje"
+}

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin Owain"
+		]
+	},
+	"ep_highlight_color.color": "Lliw",
+	"ep_highlight_color.black": "du",
+	"ep_highlight_color.red": "coch",
+	"ep_highlight_color.green": "gwyrdd",
+	"ep_highlight_color.blue": "glas",
+	"ep_highlight_color.yellow": "melyn",
+	"ep_highlight_color.orange": "oren"
+}

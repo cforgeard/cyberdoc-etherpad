@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"ep_highlight_color.color": "Färg",
+	"ep_highlight_color.black": "svart",
+	"ep_highlight_color.red": "röd",
+	"ep_highlight_color.green": "grön",
+	"ep_highlight_color.blue": "blå",
+	"ep_highlight_color.yellow": "gul",
+	"ep_highlight_color.orange": "orange"
+}

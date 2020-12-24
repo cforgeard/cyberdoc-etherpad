@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"ep_highlight_color.color": "Боја",
+	"ep_highlight_color.black": "црна",
+	"ep_highlight_color.red": "црвена",
+	"ep_highlight_color.green": "зелена",
+	"ep_highlight_color.blue": "сина",
+	"ep_highlight_color.yellow": "жолта",
+	"ep_highlight_color.orange": "портокалова"
+}
