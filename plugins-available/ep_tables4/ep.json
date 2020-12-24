@@ -1,0 +1,26 @@
+{
+	"parts": [
+	{
+		"name": "tables",
+		"hooks" : {
+			"eejsBlock_styles": "ep_tables4/static/js/index:eejsBlock_styles",
+			"eejsBlock_scripts": "ep_tables4/static/js/index:eejsBlock_scripts",
+			"eejsBlock_editbarMenuLeft": "ep_tables4/static/js/index:eejsBlock_editbarMenuLeft",
+			"eejsBlock_timesliderScripts": "ep_tables4/static/js/index:eejsBlock_timesliderScripts",
+      "getLineHTMLForExport" : "ep_tables4/export2html:getLineHTMLForExport"
+
+		},
+		"client_hooks" : {
+		 	"collectContentLineBreak": "ep_tables4/static/js/contentcollector:collectContentLineBreak",
+		 	"collectContentLineText": "ep_tables4/static/js/contentcollector:collectContentLineText",
+			"aceKeyEvent": "ep_tables4/static/js/datatables:aceKeyEvent",
+			"aceStartLineAndCharForPoint": "ep_tables4/static/js/datatables:aceStartLineAndCharForPoint",
+			"aceEndLineAndCharForPoint": "ep_tables4/static/js/datatables:aceEndLineAndCharForPoint",
+			"aceAttribsToClasses": "ep_tables4/static/js/datatables:aceAttribsToClasses",
+			"acePostWriteDomLineHTML": "ep_tables4/static/js/datatables:acePostWriteDomLineHTML",
+			"aceInitialized": "ep_tables4/static/js/datatables:aceInitialized",
+			"postAceInit": "ep_tables4/static/js/initialisation:postAceInit"
+		}
+	}]
+}
+
