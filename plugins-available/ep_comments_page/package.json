@@ -1,0 +1,64 @@
+{
+  "description": "Adds comments on sidebar and link it to the text.  For no-skin use ep_page_view.",
+  "name": "ep_comments_page",
+  "version": "0.1.46",
+  "author": {
+    "name": "Nicolas Lescop",
+    "email": "limplementeur@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "contributors": [
+    {
+      "name": "Nicolas Lescop",
+      "email": "limplementeur@gmail.com"
+    },
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk"
+    },
+    {
+      "name": "Luiza Pagliari",
+      "email": "lpagliari@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "formidable": "*"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-etherpad": "^1.0.10",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "request": "^2.88.2",
+    "socket.io-client": "^2.3.0",
+    "superagent": "^3.8.3",
+    "supertest": "^4.0.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "etherpad/plugin",
+    "ignorePatterns": [
+      "/static/js/jquery.tmpl.min.js",
+      "/static/js/moment-with-locales.min.js"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "ep_etherpad-lite": ">=1.8.6"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether/ep_comments"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  }
+}
