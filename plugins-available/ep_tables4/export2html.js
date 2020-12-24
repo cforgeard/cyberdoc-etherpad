@@ -24,6 +24,7 @@ retrieveIndex = function (attribLine) {
   attribLine = attribLine[0] + "";
 
   for (var i = 0; i < attribLine.length; i++) {
+    if (!arr_indices[attribLine[i]]) continue;
     if (i == attribLine.length - 1) {
       attribIndex += arr_indices[attribLine[i]];
     } else {
