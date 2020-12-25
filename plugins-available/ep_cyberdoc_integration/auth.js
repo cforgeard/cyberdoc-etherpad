@@ -1,10 +1,30 @@
 const jwt = require('jsonwebtoken');
+const settings = require('ep_etherpad-lite/node/utils/Settings');
+
+function isCyberDocAuthHooksEnabled() {
+    if (settings.ep_cyberdoc_integration && settings.ep_cyberdoc_integration.enabled === true) {
+        return true;
+    }
+    return false;
+}
+
+console.info("[ep_cyberdoc_integration]", "isCyberDocAuthHooksEnabled", isCyberDocAuthHooksEnabled());
 
 exports.authenticate = function (hook_name, context, cb) {
+    if (!isCyberDocAuthHooksEnabled()) {
+        cb([true]);
+        return;
+    }
+
     cb([false]); /* always return false because authentication is done via CyberDoc backend, not via Etherpad */
 }
 
 exports.authorize = function (hook_name, context, cb) {
+    if (!isCyberDocAuthHooksEnabled()) {
+        cb([true]);
+        return;
+    }
+
     try {
         const jwtToken = context.req.cookies["access_token"];
         if (!jwtToken) {
@@ -43,6 +63,11 @@ exports.authFailure = function (hook_name, context, cb) {
 }
 
 exports.onAccessCheck = function (hook_name, context, cb) {
+    if (!isCyberDocAuthHooksEnabled()) {
+        cb([true]);
+        return;
+    }
+
     const fileCollection = db.db.wrappedDB.fileCollection;
     jwt.verify(context.token, `${settings.dbSettings.jwtSecret}`);
     const currentUser = jwt.decode(context.token).user;
