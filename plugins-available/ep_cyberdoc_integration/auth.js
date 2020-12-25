@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const settings = require('ep_etherpad-lite/node/utils/Settings');
 
 function isCyberDocAuthHooksEnabled() {
-    if (settings.ep_cyberdoc_integration && settings.ep_cyberdoc_integration.enabled === true) {
+    if (settings.ep_cyberdoc_integration && settings.ep_cyberdoc_integration.authHooksEnabled === true) {
         return true;
     }
     return false;
