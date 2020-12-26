@@ -14,17 +14,6 @@ $(document).ready(function () {
     $("#selectedAlign").val($(this).data("value"))
   });
 
-  $("#insertEmbedMedia").click(function () {
-    // Can not use this yet, fix in main etherpad
-    // padeditbar.toogleDropDown("embedMediaModal");
-    var module = $("#embedMediaModal");
-    if (!module.hasClass('insertEmbedMedia-show')) {
-      module.addClass("insertEmbedMedia-show");
-    } else {
-      module.removeClass("insertEmbedMedia-show");
-    }
-  });
-
   $("#doEmbedMedia").click(function () {
     var padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
 
@@ -75,6 +64,21 @@ $(document).ready(function () {
     $("#embedMediaModal").removeClass("insertEmbedMedia-show");
   });
 })
+
+exports.postToolbarInit = (hookName, context, cb) => {
+  const editbar = context.toolbar; // toolbar is actually editbar - http://etherpad.org/doc/v1.5.7/#index_editbar
+  const insertImageModal = document.querySelector("#embedMediaModal");
+  editbar.registerCommand('insertImage', () => {
+
+    if (insertImageModal.classList.contains("insertEmbedMedia-show")) {
+      insertImageModal.classList.remove("insertEmbedMedia-show");
+    } else {
+      insertImageModal.classList.add("insertEmbedMedia-show");
+    }
+  });
+
+  return cb();
+}
 
 function isValidImageURL(url) {
   if (!url) return false;

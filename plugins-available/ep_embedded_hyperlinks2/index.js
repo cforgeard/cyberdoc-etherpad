@@ -1,10 +1,5 @@
 var eejs = require('ep_etherpad-lite/node/eejs/');
 
-exports.eejsBlock_editbarMenuLeft = function(hook_name, args, cb) {
-    args.content = args.content + eejs.require('ep_embedded_hyperlinks2/templates/editbarButtons.ejs');
-    return cb();
-}
-
 exports.eejsBlock_editorContainerBox = function (hook_name, args, cb) {
   args.content = args.content + eejs.require("ep_embedded_hyperlinks2/templates/popup.ejs", {}, module);
   return cb();
@@ -20,8 +15,7 @@ exports.padInitToolbar = (hookName, args, cb) => {
 
   const insertHyperlinkButton = toolbar.button({
     command: 'insertHyperlink',
-    localizationId: 'ep_embedded_hyperlinks.editbarButtons.hyperlink',
-    class: 'buttonicon buttonicon-link ep_embedded_hyperlinks2 ep_insert_hyperlink',
+    class: 'buttonicon buttonicon-link ep_embedded_hyperlinks2 ep_insert_hyperlink hyperlink-icon',
   });
 
   toolbar.registerButton('insertHyperlink', insertHyperlinkButton);
