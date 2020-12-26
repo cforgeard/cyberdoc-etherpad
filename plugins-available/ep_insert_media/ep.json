@@ -18,7 +18,7 @@
         "aceAttribsToClasses": "ep_insert_media/static/js/hooks:aceAttribsToClasses",
         "aceCreateDomLine": "ep_insert_media/static/js/hooks:aceCreateDomLine",
         "aceInitialized" : "ep_insert_media/static/js/hooks:aceInitialized",
-        "postToolbarInit": "ep_insert_media/static/js/main"
+        "postToolbarInit": "ep_insert_media/static/js/hooks:postToolbarInit"
       }
     }
   ]

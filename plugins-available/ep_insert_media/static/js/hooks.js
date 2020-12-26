@@ -75,3 +75,18 @@ exports.aceInitialized = function (hook, context, cb) {
   });
   return cb();
 }
+
+exports.postToolbarInit = function (hookName, context, cb) {
+  const editbar = context.toolbar; // toolbar is actually editbar - http://etherpad.org/doc/v1.5.7/#index_editbar
+  const insertImageModal = document.querySelector("#embedMediaModal");
+  editbar.registerCommand('insertImage', () => {
+
+    if (insertImageModal.classList.contains("insertEmbedMedia-show")) {
+      insertImageModal.classList.remove("insertEmbedMedia-show");
+    } else {
+      insertImageModal.classList.add("insertEmbedMedia-show");
+    }
+  });
+
+  return cb();
+}

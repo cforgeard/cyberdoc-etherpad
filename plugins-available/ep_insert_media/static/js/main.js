@@ -65,21 +65,6 @@ $(document).ready(function () {
   });
 })
 
-exports.postToolbarInit = (hookName, context, cb) => {
-  const editbar = context.toolbar; // toolbar is actually editbar - http://etherpad.org/doc/v1.5.7/#index_editbar
-  const insertImageModal = document.querySelector("#embedMediaModal");
-  editbar.registerCommand('insertImage', () => {
-
-    if (insertImageModal.classList.contains("insertEmbedMedia-show")) {
-      insertImageModal.classList.remove("insertEmbedMedia-show");
-    } else {
-      insertImageModal.classList.add("insertEmbedMedia-show");
-    }
-  });
-
-  return cb();
-}
-
 function isValidImageURL(url) {
   if (!url) return false;
   if (url.startsWith("http://") || url.startsWith("https://")) {
