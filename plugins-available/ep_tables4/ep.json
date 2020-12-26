@@ -8,7 +8,8 @@
 				"eejsBlock_editbarMenuLeft": "ep_tables4/static/js/index:eejsBlock_editbarMenuLeft",
 				"eejsBlock_timesliderScripts": "ep_tables4/static/js/index:eejsBlock_timesliderScripts",
 				"eejsBlock_dd_insert": "ep_tables4/static/js/index:eejsBlock_dd_insert",
-				"getLineHTMLForExport": "ep_tables4/export2html:getLineHTMLForExport"
+				"getLineHTMLForExport": "ep_tables4/export2html:getLineHTMLForExport",
+				"padInitToolbar": "ep_tables4/static/js/index"
 			},
 			"client_hooks": {
 				"collectContentLineBreak": "ep_tables4/static/js/contentcollector:collectContentLineBreak",

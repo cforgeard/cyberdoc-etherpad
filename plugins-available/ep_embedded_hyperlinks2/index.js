@@ -14,3 +14,16 @@ exports.eejsBlock_dd_insert = (hookName, args, cb) => {
   args.content += eejs.require('ep_embedded_hyperlinks2/templates/fileMenu.ejs');
   return cb();
 };
+
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+
+  const insertHyperlinkButton = toolbar.button({
+    command: 'insertHyperlink',
+    localizationId: 'ep_embedded_hyperlinks.editbarButtons.hyperlink',
+    class: 'buttonicon buttonicon-link ep_embedded_hyperlinks2 ep_insert_hyperlink',
+  });
+
+  toolbar.registerButton('insertHyperlink', insertHyperlinkButton);
+  return cb();
+};

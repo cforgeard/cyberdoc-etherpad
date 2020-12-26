@@ -24,3 +24,16 @@ exports.eejsBlock_dd_insert = (hookName, args, cb) => {
   args.content += eejs.require('ep_insert_media/templates/fileMenu.ejs');
   return cb();
 }
+
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+
+  const insertImageButton = toolbar.button({
+    command: 'insertImage',
+    /*localizationId: 'ep_embedded_hyperlinks.editbarButtons.hyperlink',*/
+    class: 'buttonicon buttonicon-picture ep_insert_media ep_insert_image',
+  });
+
+  toolbar.registerButton('insertImage', insertImageButton);
+  return cb();
+}

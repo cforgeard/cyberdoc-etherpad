@@ -143,7 +143,7 @@ exports.padInitToolbar = (hookName, args, cb) => {
   const button = toolbar.button({
     command: 'addComment',
     localizationId: 'ep_comments_page.add_comment.title',
-    class: 'buttonicon buttonicon-comment-medical',
+    class: 'buttonicon buttonicon-comment-medical ep_comments_page ep_add_comment',
   });
 
   toolbar.registerButton('addComment', button);

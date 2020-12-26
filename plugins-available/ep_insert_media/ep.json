@@ -11,7 +11,8 @@
         "eejsBlock_body": "ep_insert_media/hooks:eejsBlock_body",
         "eejsBlock_dd_insert": "ep_insert_media/hooks:eejsBlock_dd_insert",
         "exportHtmlAdditionalTagsWithData": "ep_insert_media/exportHTML",
-        "getLineHTMLForExport": "ep_insert_media/exportHTML"
+        "getLineHTMLForExport": "ep_insert_media/exportHTML" ,
+        "padInitToolbar": "ep_insert_media/hooks"
       },
       "client_hooks": {
         "aceInitInnerdocbodyHead": "ep_insert_media/static/js/hooks:aceInitInnerdocbodyHead",

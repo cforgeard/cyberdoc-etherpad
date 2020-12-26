@@ -30,6 +30,26 @@ exports.aceAttribClasses = (hook, attr) => {
   return attr;
 };
 
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+
+  const superscriptButton = toolbar.button({
+    command: 'superscript',
+    /*localizationId: 'ep_align.toolbar.left.title',*/
+    class: 'buttonicon buttonicon-superscript ep_subscript_and_superscript ep_superscript',
+  });
+
+  const subscriptButton = toolbar.button({
+    command: 'subscript',
+    /*localizationId: 'ep_align.toolbar.middle.title',*/
+    class: 'buttonicon buttonicon-subscript ep_subscript_and_superscript ep_subscript',
+  });
+
+  toolbar.registerButton('superscript', superscriptButton);
+  toolbar.registerButton('subscript', subscriptButton);
+
+  return cb();
+};
 
 const rewriteLine = (context) => context.lineContent;
 

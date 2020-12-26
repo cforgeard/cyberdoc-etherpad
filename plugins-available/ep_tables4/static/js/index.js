@@ -24,3 +24,16 @@ exports.eejsBlock_styles = function (hook_name, args, cb) {
   args.content += eejs.require("ep_tables4/templates/styles.ejs");
   return cb();
 }
+
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+
+  const insertTableButton = toolbar.button({
+    command: 'insertTable',
+    /*localizationId: 'ep_embedded_hyperlinks.editbarButtons.hyperlink',*/
+    class: 'buttonicon buttonicon-table ep_tables4 ep_insert_table',
+  });
+
+  toolbar.registerButton('insertTable', insertTableButton);
+  return cb();
+}

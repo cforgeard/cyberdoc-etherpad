@@ -18,7 +18,8 @@
         "eejsBlock_dd_format":"ep_subscript_and_superscript/index",
         "aceAttribClasses":"ep_subscript_and_superscript/index",
         "exportHtmlAdditionalTags" : "ep_subscript_and_superscript/index",
-        "asyncLineHTMLForExport": "ep_subscript_and_superscript/index"
+        "asyncLineHTMLForExport": "ep_subscript_and_superscript/index",
+        "padInitToolbar": "ep_subscript_and_superscript/index"
       }
     }
   ]
