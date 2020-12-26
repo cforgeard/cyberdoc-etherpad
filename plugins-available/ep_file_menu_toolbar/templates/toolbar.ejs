@@ -17,11 +17,24 @@
     <li>
       <a href="#">File</a>
       <ul>
+        <li><a class="has-submenu" href="#" data-key="text" data-type="button">Export as</a>
+          <ul class="submenu">
+            <li><a class="menu-toolbar-icon buttonicon-file-word" href="#" data-key="exportWord" data-type="button"
+                onClick="$('#exportworda').click();">Microsoft Word</a></li>
+            <li><a class="menu-toolbar-icon buttonicon-file-alt" href="#" data-key="exportLibreOffice"
+                data-type="button" onClick="$('.exportopena').click();">LibreOffice</a></li>
+            <li><a class="menu-toolbar-icon buttonicon-file" href="#" data-key="exportTxt"
+                data-type="button" onClick="$('.exportplaina').click();">Plain text</a></li>
+            <li><a class="menu-toolbar-icon buttonicon-file-pdf" href="#" data-key="exportPDF"
+                data-type="button" onClick="$('.exportpdfa').click();">PDF</a></li>
+          </ul>
+        </li>
+        <hr />
         <li>
           <% e.begin_block("dd_file"); %>
         <li onclick="document.location = document.location.pathname+ '/timeslider'"><a
             class="menu-toolbar-icon buttonicon-history" data-l10n-id="pad.toolbar.timeslider.title" href="#"
-            id="timesliderlink">Timeslider</a></li>
+            id="timesliderlink">Document history</a></li>
         <hr />
         <li><a class="menu-toolbar-icon buttonicon-settings" href="#" id="filemenutoolbarsettings" data-key="settings"
             data-type="button" data-l10n-id="pad.settings.padSettings">Settings</a></li>
