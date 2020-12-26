@@ -58,7 +58,7 @@ exports.aceEditEvent = (hook, call, cb) => {
         const currentAlign = k || "left";
         const currentAlignIndex = tags.indexOf(currentAlign);
         for (let i = 0; i < tags.length; i++) {
-          const menuItem = document.querySelector(`[data-align="${i}"]`);
+          const menuItem = document.querySelector(`.ep_align_${tags[i]}`);
           if (currentAlignIndex === i) {
             menuItem.classList.add("selected");
           } else {
