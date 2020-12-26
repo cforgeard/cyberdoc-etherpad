@@ -9,7 +9,7 @@ exports.aceRegisterBlockElements = () => tags;
 
 // Bind the event handler to the toolbar buttons
 exports.postAceInit = (hookName, context) => {
-  const hs = $('#heading-selection');
+  const hs = $('#font-style, select.font-style-selection');
   hs.on('change', function () {
     const value = $(this).val();
     const intValue = parseInt(value, 10);
@@ -37,7 +37,7 @@ exports.aceEditEvent = (hookName, call) => {
     const attributeManager = call.documentAttributeManager;
     const rep = call.rep;
     const activeAttributes = {};
-    $('#heading-selection').val('dummy').niceSelect('update');
+    $('#font-style, select.font-style-selection').val('dummy').niceSelect('update');
 
     const firstLine = rep.selStart[0];
     const lastLine = Math.max(firstLine, rep.selEnd[0] - ((rep.selEnd[1] === 0) ? 1 : 0));
@@ -58,7 +58,7 @@ exports.aceEditEvent = (hookName, call) => {
       if (attr.count === totalNumberOfLines) {
         // show as active class
         const ind = tags.indexOf(k);
-        $('#heading-selection').val(ind).niceSelect('update');
+        $('#font-style, select.font-style-selection').val(ind).niceSelect('update');
       }
     });
   }, 250);

@@ -1,12 +1,5 @@
 'use strict';
-
-const eejs = require('ep_etherpad-lite/node/eejs/');
 const Changeset = require('ep_etherpad-lite/static/js/Changeset');
-
-exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {
-  args.content += eejs.require('ep_headings2/templates/editbarButtons.ejs');
-  return cb();
-};
 
 // Include CSS for HTML export
 exports.stylesForExport = () => (
@@ -45,4 +38,23 @@ exports.getLineHTMLForExport = async (hookName, context) => {
     }
     return context.lineContent;
   }
+};
+
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+  const fontStyle = toolbar.selectButton({
+    command: 'fontStyle',
+    class: 'font-style-selection',
+    selectId: 'font-style',
+  });
+  fontStyle.addOption('dummy', 'Style', {'data-l10n-id': 'ep_headings.style'});
+  fontStyle.addOption('-1', 'Normal', {'data-l10n-id': 'ep_headings.normal'});
+  fontStyle.addOption('0', 'Heading 1', {'data-l10n-id': 'ep_headings.h1'});
+  fontStyle.addOption('1', 'Heading 2', {'data-l10n-id': 'ep_headings.h2'});
+  fontStyle.addOption('2', 'Heading 3', {'data-l10n-id': 'ep_headings.h3'});
+  fontStyle.addOption('3', 'Heading 4', {'data-l10n-id': 'ep_headings.h4'});
+  fontStyle.addOption('4', 'Code', {'data-l10n-id': 'ep_headings.code'});
+
+  toolbar.registerButton('fontStyle', fontStyle);
+  return cb();
 };
