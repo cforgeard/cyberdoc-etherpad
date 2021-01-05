@@ -26,7 +26,7 @@ const colors = [
 
 // Bind the event handler to the toolbar buttons
 const postAceInit = function (hook, context) {
-  const hs = $('.highlight-color-selection');
+  const hs = $('#font-background-color, select.font-background-selection');
   hs.on('change', function () {
     const value = $(this).val();
     const intValue = parseInt(value, 10);
@@ -128,10 +128,10 @@ const aceEditEvent = function (hook, call, cb) {
     }
 
     //value
-    const currentSpan = document.querySelector(".highlight-color-selection .current");
-
-    currentSpan.innerText = capitaliseFirstLetter(rawColor);
-    currentSpan.dataset.value = colors.indexOf(rawColor);
+    const currentSpan = document.querySelector("li[data-key='fontBackgroundColor'] .nice-select .current");
+    document.querySelector("li[data-key='fontBackgroundColor'] .nice-select").style.borderBottom = `${rawColor} solid 2px`;
+    currentSpan.classList.add("buttonicon");
+    currentSpan.classList.add("buttonicon-pencil");
     return cb();
   }, 250);
 };

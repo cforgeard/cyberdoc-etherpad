@@ -12,7 +12,8 @@
         "aceEditEvent": "ep_highlight_color/static/js/index"
       },
       "hooks": {
-        "eejsBlock_editbarMenuLeft": "ep_highlight_color/index",
+        "eejsBlock_styles": "ep_highlight_color/index",
+        "padInitToolbar": "ep_highlight_color/index",
         "collectContentPre": "ep_highlight_color/static/js/shared",
         "collectContentPost": "ep_highlight_color/static/js/shared",
         "exportHtmlAdditionalTagsWithData": "ep_highlight_color/exportHTML",
