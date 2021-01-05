@@ -10,15 +10,8 @@ var fonts = ['fontarial', 'fontavant-garde', 'fontbookman', 'fontcalibri', 'font
 
 // Bind the event handler to the toolbar buttons
 exports.postAceInit = function (hook, context, cb) {
-  const fontFamily = $('select.family-selection');
-  $.each(fonts, (k, font) => {
-    font = font.substring(4);
-    let fontString = capitaliseFirstLetter(font);
-    fontString = fontString.split('-').join(' ');
-    fontFamily.append($('<option>').attr('value', `font${font}`).text(fontString));
-  });
-  fontFamily.niceSelect('update');
-  fontFamily.on('change', function () {
+  const hs = $('#font-family, select.font-selection');
+  hs.on('change', function () {
     const value = $(this).val();
     context.ace.callWithAce((ace) => {
       // remove all other attrs
@@ -28,7 +21,6 @@ exports.postAceInit = function (hook, context, cb) {
       ace.ace_setAttributeOnSelection(value, true);
     }, 'insertfontFamily', true);
   });
-
   return cb();
 };
 
@@ -57,7 +49,7 @@ exports.aceEditEvent = function (hook, call, cb) {
       }
     }
 
-    document.querySelector(".family-selection .current").textContent = fontString;
+    document.querySelector("li[data-key='fontFamily'] .nice-select .current").textContent = fontString;
     return cb();
   }, 250);
 };

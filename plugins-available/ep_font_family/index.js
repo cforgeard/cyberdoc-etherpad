@@ -1,14 +1,4 @@
-const eejs = require('ep_etherpad-lite/node/eejs/');
 const fonts = ['fontarial', 'fontavant-garde', 'fontbookman', 'fontcalibri', 'fontcourier', 'fontgaramond', 'fonthelvetica', 'fontmonospace', 'fontpalatino', 'fonttimes-new-roman'];
-const fs = require('fs');
-
-/** ******************
-* UI
-*/
-exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
-  args.content += eejs.require('ep_font_family/templates/editbarButtons.ejs');
-  return cb();
-};
 
 
 /** ******************
@@ -46,6 +36,22 @@ exports.getLineHTMLForExport = function (hook, context, cb) {
   cb();
 };
 
-String.prototype.replaceAll = function (str1, str2, ignore) {
-  return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, '\\$&'), (ignore ? 'gi' : 'g')), (typeof (str2) === 'string') ? str2.replace(/\$/g, '$$$$') : str2);
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+  const fontFamily = toolbar.selectButton({
+    command: 'fontFamily',
+    class: 'family-selection',
+    selectId: 'font-family',
+  });
+  fontFamily.addOption('dummy', 'Font Family', {/*'data-l10n-id': 'ep_font_size.size'*/});
+  fonts.forEach(value => {
+    fontFamily.addOption(value, capitaliseFirstLetter(value.substr(4)));
+  });
+
+  toolbar.registerButton('fontFamily', fontFamily);
+  return cb();
 };
+
+function capitaliseFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
