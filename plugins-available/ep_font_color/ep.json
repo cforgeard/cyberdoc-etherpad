@@ -12,11 +12,12 @@
         "aceEditEvent": "ep_font_color/static/js/index"
       },
       "hooks": {
-        "eejsBlock_editbarMenuLeft": "ep_font_color/index",
+        "eejsBlock_styles": "ep_font_color/index",
         "collectContentPre": "ep_font_color/static/js/shared",
         "collectContentPost": "ep_font_color/static/js/shared",
         "exportHtmlAdditionalTagsWithData": "ep_font_color/exportHTML",
-        "getLineHTMLForExport": "ep_font_color/exportHTML"
+        "getLineHTMLForExport": "ep_font_color/exportHTML",
+        "padInitToolbar": "ep_font_color/index"
       }
     }
   ]
