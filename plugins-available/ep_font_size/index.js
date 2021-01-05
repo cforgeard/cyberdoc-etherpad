@@ -1,16 +1,7 @@
 'use strict';
 
 const eejs = require('ep_etherpad-lite/node/eejs/');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
 const shared = require('./static/js/shared');
-
-exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {
-  if (JSON.stringify(settings.toolbar).indexOf('fontSize') > -1) {
-    return cb();
-  }
-  args.content += eejs.require('ep_font_size/templates/editbarButtons.ejs');
-  return cb();
-};
 
 exports.eejsBlock_timesliderStyles = (hookName, args, cb) => {
   args.content += `<style>${eejs.require('ep_font_size/static/css/size.css')}</style>`;

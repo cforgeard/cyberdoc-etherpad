@@ -16,13 +16,6 @@ exports.postAceInit = (hookName, context) => {
       hs.val('dummy');
     }
   });
-  $('.font_size').hover(() => {
-    $('.submenu > .size-selection').attr('size', 6);
-    $('.submenu > #font-size').attr('size', 6);
-  });
-  $('.font-size-icon').click(() => {
-    $('#font-size').toggle();
-  });
 };
 
 exports.aceAttribsToClasses = (hookName, context) => {
@@ -61,12 +54,6 @@ exports.aceInitialized = (hookName, context) => {
 
 exports.aceEditorCSS = () => ['ep_font_size/static/css/size.css'];
 
-exports.postToolbarInit = (hookName, context) => {
-  context.toolbar.registerCommand('fontSize', (buttonName, toolbar, item) => {
-    $('#font-size').toggle();
-  });
-};
-
 // To do show what font family is active on current selection
 exports.aceEditEvent = function (hook, call, cb) {
   const cs = call.callstack;
@@ -91,7 +78,7 @@ exports.aceEditEvent = function (hook, call, cb) {
       }
     }
 
-    document.querySelector(".size-selection .current").textContent = fontSizeString;
+    document.querySelector("li[data-key='fontSize'] .nice-select .current").textContent = fontSizeString;
     return cb();
   }, 250);
 };
