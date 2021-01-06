@@ -1,17 +1,24 @@
 var $tblContextMenu;
+var mouseX;
+var mouseY;
 
 exports.postToolbarInit = (hookName, context, cb) => {
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+  });
+
   const editbar = context.toolbar; // toolbar is actually editbar - http://etherpad.org/doc/v1.5.7/#index_editbar
   editbar.registerCommand('insertTable', () => {
     openContextMenu();
   });
 
+  initContextMenu();
   return cb();
 }
 
 const openContextMenu = function (init) {
-  if (!$tblContextMenu) initContextMenu();
-  $tblContextMenu.css({ 'top': '45px', 'left': $('.buttonicon.ep_tables4.ep_insert_table').offset().left }).toggle();
+  $tblContextMenu.css({ 'top': `${mouseY}px`, 'left': `${mouseX}px` }).toggle();
 };
 
 const hideContextMenu = function () {
@@ -19,14 +26,9 @@ const hideContextMenu = function () {
 }
 
 const initContextMenu = function () {
-
-
   $tblContextMenu = $('#table-context-menu').appendTo('#editbar', function () {
-
-    $tblContextMenu.css({ 'top': '45px', 'left': $('.buttonicon.ep_tables4.ep_insert_table').offset().left, 'z-index': '1000000000000', 'display': 'block', 'visibility': 'visible' });
-
+    $tblContextMenu.css({ 'z-index': '1000000000000', 'display': 'block', 'visibility': 'visible' });
   });
-
 
   $("#create-table-container").hover(function () {
     $('#create-table-container').show();

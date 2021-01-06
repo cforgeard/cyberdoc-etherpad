@@ -30,7 +30,6 @@ exports.padInitToolbar = (hookName, args, cb) => {
 
   const insertTableButton = toolbar.button({
     command: 'insertTable',
-    /*localizationId: 'ep_embedded_hyperlinks.editbarButtons.hyperlink',*/
     class: 'buttonicon buttonicon-table ep_tables4 ep_insert_table',
   });
 

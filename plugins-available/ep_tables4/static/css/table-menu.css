@@ -6,10 +6,8 @@
   width: auto;
   display:none;
   position: fixed!important;
-  top:45px;
   padding: 0!important;
   z-index:10000000000000000;
-
 } 
 
 #table-context-menu ul li a {
@@ -83,12 +81,10 @@
 }
 
 .table-context-menu{
-
   font-size: 12px;
   padding: 10px;
-  border-radius: 0 0 6px 6px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-top: none;
   background: #f7f7f7;
   background: -webkit-linear-gradient(#F7F7F7,#EEE);
   background: -moz-linear-gradient(#F7F7F7,#EEE);
