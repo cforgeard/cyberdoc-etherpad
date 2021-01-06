@@ -28,8 +28,10 @@ exports.getLineHTMLForExport = function (hook, context, cb) {
   fonts.forEach((font) => {
     if (lineContent) {
       const fontName = font.substring(4);
-      lineContent = lineContent.replaceAll(`<${font}`, `<span style='font-family:${fontName}'`);
-      lineContent = lineContent.replaceAll(`</${font}`, '</span');
+      // cforgeard 06/01/2021 "".replaceAll not available in nodeJS
+      // https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string
+      lineContent = lineContent.split(`<${font}`).join(`<span style='font-family:${fontName}'`);
+      lineContent = lineContent.split(`</${font}`).join(`</span`);
     }
   });
   context.lineContent = lineContent;
