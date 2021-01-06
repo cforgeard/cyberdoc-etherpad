@@ -5,6 +5,7 @@ exports.documentReady = function () {
         open_delay: 0, // Delay on menu open
         close_delay: 0, // Delay on menu close
       });
+      document.getElementById("menubar").style.visibility = "visible";
     });
   });
 
