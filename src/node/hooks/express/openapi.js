@@ -615,7 +615,7 @@ exports.expressCreateServer = (hookName, args, cb) => {
               // an unknown error happened
               // log it and throw internal error
               apiLogger.error(err);
-              throw new createHTTPError.InternalError('internal error');
+              throw new createHTTPError.InternalServerError('internal error');
             }
           });
 
