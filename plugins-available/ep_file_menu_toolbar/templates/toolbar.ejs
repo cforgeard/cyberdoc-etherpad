@@ -12,6 +12,9 @@
   }
 </style>
 
+<% e.begin_block("dd_before"); %>
+<% e.end_block(); %>
+
 <ul id="menubar" style="visibility: hidden;" class="dropdown-menu">
   <% e.begin_block("dd_dropdownMenu"); %>
     <li>
@@ -127,7 +130,9 @@
 </li>
 <% e.end_block(); %>
   </ul>
-
+  <% e.begin_block("dd_after"); %>
+  <% e.end_block(); %>
+  
   <style type="text/css">
     .dropdown-menu-sub-indicator>ul {
       border: 1px solid rgb(204, 204, 204);
