@@ -4,6 +4,7 @@
     "ep_align": "file:plugins-available/ep_align",
     "ep_comments_page": "file:plugins-available/ep_comments_page",
     "ep_cyberdoc_integration": "file:plugins-available/ep_cyberdoc_integration",
+    "ep_focus_ace_after_init": "file:plugins-available/ep_focus_ace_after_init",
     "ep_embedded_hyperlinks2": "file:plugins-available/ep_embedded_hyperlinks2",
     "ep_etherpad-lite": "file:src",
     "ep_font_color": "file:plugins-available/ep_font_color",

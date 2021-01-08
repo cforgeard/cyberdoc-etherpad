@@ -1,0 +1,11 @@
+{
+    "parts": [
+        {
+            "name": "focus_ace_after_init",
+            "hooks": {},
+            "client_hooks": {
+                "postAceInit": "ep_focus_ace_after_init/static/js/index"
+            }
+        }
+    ]
+}

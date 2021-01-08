@@ -1,0 +1,12 @@
+{
+	"name": "ep_focus_ace_after_init",
+	"version": "0.0.1",
+	"private": true,
+	"description": "ep_focus_ace_after_init",
+	"author": "cyberdoc team",
+	"contributors": [],
+	"dependencies": {},
+	"engines": {
+		"node": ">=10.13.0"
+	}
+}
