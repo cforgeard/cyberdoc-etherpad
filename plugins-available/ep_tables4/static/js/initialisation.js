@@ -1,8 +1,10 @@
 var $tblContextMenu;
 var mouseX;
 var mouseY;
+var context;
 
-exports.postToolbarInit = (hookName, context, cb) => {
+exports.postToolbarInit = (hookName, ctx, cb) => {
+  context = ctx;
   document.addEventListener("mousemove", (e) => {
     mouseX = e.pageX;
     mouseY = e.pageY;
