@@ -68,13 +68,15 @@ exports.checkAccess = async function (padID, sessionCookie, token, userSettings)
     if (userSettings.readOnly) canCreate = false;
     // Note: userSettings.padAuthorizations should still be populated even if
     // settings.requireAuthorization is false.
-    const padAuthzs = userSettings.padAuthorizations || {};
-    const level = webaccess.normalizeAuthzLevel(padAuthzs[padID]);
-    if (!level) {
-      authLogger.debug('access denied: unauthorized');
-      return DENY;
+    if (!settings.ep_SecurityManager_hack.disablePadAuthorizationsCheck) {
+      const padAuthzs = userSettings.padAuthorizations || {};
+      const level = webaccess.normalizeAuthzLevel(padAuthzs[padID]);
+      if (!level) {
+        authLogger.debug('access denied: unauthorized');
+        return DENY;
+      }
+      if (level !== 'create') canCreate = false;
     }
-    if (level !== 'create') canCreate = false;
   }
 
   // allow plugins to deny access

@@ -10,7 +10,8 @@
                 "eejsBlock_editbarMenuRight": "ep_cyberdoc_integration/eejs",
                 "eejsBlock_dd_file": "ep_cyberdoc_integration/eejs",
                 "eejsBlock_dd_before": "ep_cyberdoc_integration/eejs",
-                "eejsBlock_dd_after": "ep_cyberdoc_integration/eejs"
+                "eejsBlock_dd_after": "ep_cyberdoc_integration/eejs",
+                "userLeave": "ep_cyberdoc_integration/user-leave-handler"
             },
             "client_hooks": {}
         }

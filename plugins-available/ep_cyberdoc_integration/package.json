@@ -6,8 +6,7 @@
 	"author": "cyberdoc team",
 	"contributors": [],
 	"dependencies": {
-		"jsonwebtoken": "^8.5.1",
-		"mongodb": "^3.6.3"
+		"axios": "^0.21.1"
 	},
 	"engines": {
 		"node": ">=10.13.0"

@@ -85,10 +85,13 @@ exports.setSocketIO = function (socket_io) {
  * @param socket the socket.io Socket object for the new connection from the client
  */
 exports.handleConnect = (socket) => {
+  //console.warn(socket);
   stats.meter('connects').mark();
 
   // Initalize sessioninfos for this new session
-  sessioninfos[socket.id] = {};
+  sessioninfos[socket.id] = {
+    "handshake": JSON.parse(JSON.stringify(socket.handshake))
+  };
 };
 
 /**
