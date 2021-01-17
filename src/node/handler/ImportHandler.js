@@ -133,7 +133,7 @@ async function doImport(req, res, padId) {
   const destFile = path.join(tmpDirectory, `etherpad_import_${randNum}.${exportExtension}`);
 
   // Logic for allowing external Import Plugins
-  const result = await hooks.aCallAll('import', {srcFile, destFile, fileEnding});
+  const result = await hooks.aCallAll('import', { srcFile, destFile, fileEnding });
   const importHandledByPlugin = (result.length > 0); // This feels hacky and wrong..
 
   const fileIsEtherpad = (fileEnding === '.etherpad');
@@ -253,7 +253,7 @@ async function doImport(req, res, padId) {
   }
 }
 
-exports.doImport = function (req, res, padId) {
+exports.doImport = async function (req, res, padId) {
   /**
    * NB: abuse the 'req' object by storing an additional
    * 'directDatabaseAccess' property on it so that it can
@@ -264,15 +264,14 @@ exports.doImport = function (req, res, padId) {
    * a value to the caller.
    */
   let status = 'ok';
-  doImport(req, res, padId).catch((err) => {
-    // check for known errors and replace the status
+  try {
+    await doImport(req, res, padId);
+    res.send(`<script>document.addEventListener('DOMContentLoaded', function(){ var impexp = window.parent.padimpexp.handleFrameCall('${req.directDatabaseAccess}', '${status}'); })</script>`);
+  } catch (err) {
     if (err == 'uploadFailed' || err == 'convertFailed' || err == 'padHasData' || err == 'maxFileSize') {
       status = err;
     } else {
       throw err;
     }
-  }).then(() => {
-    // close the connection
-    res.send(`<script>document.addEventListener('DOMContentLoaded', function(){ var impexp = window.parent.padimpexp.handleFrameCall('${req.directDatabaseAccess}', '${status}'); })</script>`);
-  });
+  }
 };
