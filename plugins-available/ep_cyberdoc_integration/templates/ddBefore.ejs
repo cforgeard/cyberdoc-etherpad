@@ -1,0 +1,34 @@
+<div style="display: flex; padding: 8px;">
+    <style>
+        #cyberDocAppIcon{cursor: pointer;}
+        #cyberDocAppIcon:hover{background-color: var(--bg-soft-color);}
+    </style>
+    <script>
+        const frontendBaseURL = "<%= frontendBaseURL %>";
+        const backendBaseURL = "<%= backendBaseURL %>";
+        const fileID = location.pathname.split("/")[2];
+
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("load", ()=>{
+            const fileInfo = JSON.parse(xhr.responseText).content;
+            function updateWithFileInfo(){
+                document.getElementById("documentName").textContent = fileInfo.name;    
+                document.getElementById("cyberDocAppIcon").href = `${frontendBaseURL}/files/${fileInfo.parent_file_id}`;
+            }
+
+            if (document.readyState === "interactive") {
+                updateWithFileInfo();
+            } else {
+                document.addEventListener("DOMContentLoaded", updateWithFileInfo);
+            }
+        });
+        xhr.open("GET", `${backendBaseURL}/files/${fileID}`);
+        xhr.send();
+    </script>
+
+    <a title="Go back to CyberDoc" href="#" id="cyberDocAppIcon">
+        <img src="<%= iconURL %>" width="48" height="48" style="padding: 4px;">
+    </a>
+    <div>
+        <p style="font-size: large; margin-left: 4px;" id="documentName"></p>

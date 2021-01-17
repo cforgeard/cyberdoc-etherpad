@@ -6,9 +6,6 @@
                 "authenticate": "ep_cyberdoc_integration/auth",
                 "authorize": "ep_cyberdoc_integration/auth",
                 "authFailure": "ep_cyberdoc_integration/auth",
-                "onAccessCheck": "ep_cyberdoc_integration/auth",
-                "eejsBlock_editbarMenuRight": "ep_cyberdoc_integration/eejs",
-                "eejsBlock_dd_file": "ep_cyberdoc_integration/eejs",
                 "eejsBlock_dd_before": "ep_cyberdoc_integration/eejs",
                 "eejsBlock_dd_after": "ep_cyberdoc_integration/eejs",
                 "userLeave": "ep_cyberdoc_integration/user-leave-handler"
