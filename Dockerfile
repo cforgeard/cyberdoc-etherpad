@@ -11,6 +11,7 @@ LABEL maintainer="Etherpad team, https://github.com/ether/etherpad-lite"
 ENV DEBIAN_FRONTEND=noninteractive
 
 # install node
+RUN apt-get update 
 RUN apt-get -y install wget
 RUN wget -qO- https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get -y install nodejs
