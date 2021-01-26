@@ -4,11 +4,17 @@
 #
 # Author: muxator
 
-FROM node:10-buster-slim
+FROM ubuntu:20.04
 LABEL maintainer="Etherpad team, https://github.com/ether/etherpad-lite"
 
 # disable linux interactive requests
 ENV DEBIAN_FRONTEND=noninteractive
+
+# install node
+RUN apt-get -y install wget
+RUN wget -qO- https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get -y install nodejs
+RUN npm i -g npm@latest
 
 # install libreoffice
 RUN apt-get update && apt-get install -y libreoffice
