@@ -314,6 +314,11 @@
    */
   "requireAuthentication": "${REQUIRE_AUTHENTICATION:false}",
 
+  //see src/node/db/SecurityManager.js, function checkAccess
+  "ep_SecurityManager_hack": {
+    "disablePadAuthorizationsCheck": "${HACK_DISABLE_PAD_AUTH_CHECK:false}"
+  },
+
   /*
    * Require authorization by a module, or a user with is_admin set, see below.
    */
@@ -492,24 +497,24 @@
    * Uncomment to customize.
    */
 
-  /*
-  "toolbar": {
+   "toolbar": {
     "left": [
-      ["bold", "italic", "underline", "strikethrough"],
-      ["orderedlist", "unorderedlist", "indent", "outdent"],
       ["undo", "redo"],
-      ["clearauthorship"]
+      ["fontStyle", "fontFamily", "fontSize"],
+      ["bold", "italic", "underline", "strikethrough", "fontForegroundColor", "fontBackgroundColor", "subscript", "superscript"],
+      ["insertHyperlink", "insertImage", "addComment", "insertTable"],
+      ["alignLeft", "alignCenter", "alignRight", "alignJustify"],
+      ["orderedlist", "unorderedlist", "indent", "outdent"]
     ],
     "right": [
       ["importexport", "timeslider", "savedrevision"],
-      ["settings", "embed"],
+      ["settings"],
       ["showusers"]
     ],
     "timeslider": [
       ["timeslider_export", "timeslider_returnToPad"]
     ]
   },
-  */
 
   /*
    * Expose Etherpad version in the web interface and in the Server http header.
@@ -578,5 +583,13 @@
     }, // logconfig
 
   /* Override any strings found in locale directories */
-  "customLocaleStrings": {}
+  "customLocaleStrings": {},
+
+  "ep_cyberdoc_integration": {
+    "enableAuthHooks": "${CYBERDOC_ENABLE_AUTH_HOOKS:false}",
+    "enableUserLeaveHandler": "${CYBERDOC_ENABLE_USER_LEAVE_HANDLER:false}",
+    "frontendBaseURL": "${CYBERDOC_FRONTEND_BASE_URL}",
+    "backendBaseURL": "${CYBERDOC_BACKEND_BASE_URL}",
+    "iconURL": "${CYBERDOC_ICON_URL}"
+  }
 }
