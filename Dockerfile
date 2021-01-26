@@ -7,6 +7,9 @@
 FROM node:10-buster-slim
 LABEL maintainer="Etherpad team, https://github.com/ether/etherpad-lite"
 
+# disable linux interactive requests
+ENV DEBIAN_FRONTEND=noninteractive
+
 # install libreoffice
 RUN apt-get update && apt-get install -y libreoffice
 
