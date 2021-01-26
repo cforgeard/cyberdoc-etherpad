@@ -14,6 +14,10 @@ function isImportOrExportEndpoint(url) {
         || /\/p\/([a-z0-9.-]*)\/export/.test(url))
 }
 
+function isImportOrExportAllowed(ip) {
+    return ip === "127.0.0.1" || ip.includes("172.17"); //docker IPs
+}
+
 const enableAuthHooks = settings && settings['enableAuthHooks'];
 console.warn("[ep_cyberdoc_integration]", `enableAuthHooks=${enableAuthHooks}`);
 
@@ -24,7 +28,7 @@ if (enableAuthHooks) {
         //special case for import/export endpoint
         if (isImportOrExportEndpoint(context.req.url)) {
             console.warn("[ep_cyberdoc_integration]", "authenticate", `import/export endpoint called (${context.req.ip})`, context.req.url);
-            const allowed = context.req.ip === "127.0.0.1";
+            const allowed = isImportOrExportAllowed(ip);
             if (allowed) {
                 context.req.session.user = { "__fake_user_for_importexport": true, "username": "<fake_user_for_importexport>" };
             }
