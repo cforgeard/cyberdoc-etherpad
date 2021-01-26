@@ -28,7 +28,7 @@ if (enableAuthHooks) {
         //special case for import/export endpoint
         if (isImportOrExportEndpoint(context.req.url)) {
             console.warn("[ep_cyberdoc_integration]", "authenticate", `import/export endpoint called (${context.req.ip})`, context.req.url);
-            const allowed = isImportOrExportAllowed(ip);
+            const allowed = isImportOrExportAllowed(context.req.ip);
             if (allowed) {
                 context.req.session.user = { "__fake_user_for_importexport": true, "username": "<fake_user_for_importexport>" };
             }
