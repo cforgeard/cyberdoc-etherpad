@@ -14,6 +14,7 @@
             const fileInfo = JSON.parse(xhr.responseText).content;
             function updateWithFileInfo(){
                 document.getElementById("documentName").textContent = fileInfo.name;    
+                document.querySelector("title").textContent = `${fileInfo.name} - CyberDoc`;
                 document.getElementById("cyberDocAppIcon").href = `${frontendBaseURL}/files/${fileInfo.parent_file_id}`;
             }
 
